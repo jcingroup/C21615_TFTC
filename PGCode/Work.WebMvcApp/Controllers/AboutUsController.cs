@@ -43,5 +43,17 @@ namespace DotWeb.WebApp.Controllers
             return View(r1);
         }
 
+        public ActionResult tfta()
+        {
+            return View();
+        }
+        public ActionResult tfta2()
+        {
+            return View();
+        }
+        public ActionResult tfta3()
+        {
+            return View();
+        }
     }
 }

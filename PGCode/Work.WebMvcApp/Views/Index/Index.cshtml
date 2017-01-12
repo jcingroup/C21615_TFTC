@@ -9,7 +9,7 @@
     CultureInfo c = new CultureInfo("en-US");
 }
 
-@section JScript{
+@section JScript {
     <script type="text/javascript" src="~/Scripts/nivo-slider/jquery.nivo.slider.js"></script>
     <!--Banner換圖特效-->
     <script type="text/javascript">
@@ -48,7 +48,7 @@
     <p>薄膜技術是一項能夠提升科技及產業價值的重要技術，所有先進國家皆因有了高級薄膜技術而大幅度增加產品價值，並衍生新科技強化他們的國力。當今台灣產業正值轉形期，薄膜技術的發展可帶領台灣科技產業邁入一個新的紀元。國立中央大學有鑒於此而在2004年2月，成立薄膜技術中心，希望藉由成立薄膜技術中心，以及交大、清大、陽明、中央四校的合作與學術資源的整合，有效且具體的利用薄膜技術，加速台灣高科技產業的發展並厚植國力。</p>
 </div>
 
-<div class="link">
+@* <div class="link">
     <h3><span>網網相連</span></h3>
     <ul>
         <li><a href="http://www.ncu.edu.tw/" target="new" title="中央大學">
@@ -67,16 +67,22 @@
                 <img src="~/Content/images/link/tps.jpg" alt="中華民國光電學會">
 </a></li>
     </ul>
-</div>
+</div> *@
 
 <div class="album">
     <h3><span>活動剪影</span></h3>
     <a class="more" href="~/Albums/list">More</a>
-    <!--取最新1本相簿列表圖&相簿標題-->
+
+    @* 取最新1本相簿列表圖&相簿標題 *@
+    <figure>
+        <a href=""></a>
+        <img src="~/Content/images/Albums/pic1.jpg">
+        <figcaption>活動剪影標題</figcaption>
+    </figure>
 
     @if (Model.Albums != null)
     {
-        var ps = Html.ImagesAppendInfo("Sys_Active", "ActivePhoto", Model.Albums.id, "ListIcon", 334).FirstOrDefault();    
+        var ps = Html.ImagesAppendInfo("Sys_Active", "ActivePhoto", Model.Albums.id, "ListIcon", 334).FirstOrDefault();
         <a href="~/Albums/content/@Model.Albums.id">
             <img src="@ps"></a>
         <em><a href="~/Albums/content/@Model.Albums.id">@Model.Albums.title</a></em>

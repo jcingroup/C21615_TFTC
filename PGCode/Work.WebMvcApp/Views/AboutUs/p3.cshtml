@@ -1,7 +1,8 @@
 ﻿@model ProcCore.Business.Logic.m_PageContext
 @{
-    ViewBag.Title = "中心組織";
+    ViewBag.Title = "中心主任";
     Layout = "~/Views/Shared/Layout.cshtml";
+    ViewBag.subnav = "sn1-3";
 }
 
 @section breadCrumb {
@@ -9,8 +10,11 @@
 }
 
 <div id="content">
-            
-            <h3><span>中心組織</span>ORGANIZATION</h3>
-            <div id="upload"><!--編輯器資料-->
-                  @Html.Raw(Model.pagecontext)
-            </div><!-- upload //-->
+
+    <h3><span>中心主任</span>SUPERVISOR</h3>
+    <div id="upload">
+        @* 編輯器資料 *@
+        @Html.Raw(Model.pagecontext)
+    </div><!-- upload //-->
+
+</div>

@@ -8,55 +8,39 @@
     @if (c == "AboutUs")
     {
         <h3>關於中心</h3>
-        <ul>
-            <li class="tab1"><a href="~/AboutUs/index">中心簡介</a></li>
-            <li class="tab2"><a href="~/AboutUs/p2">中心理念</a></li>
-            <li class="tab3"><a href="~/AboutUs/p3">中心主任</a></li>
-        </ul>
+        <nav>
+            <a href="~/AboutUs/index" class="@(ViewBag.subnav == "sn1-1" ? "current" : "")">中心簡介</a>
+            <a href="~/AboutUs/p2" class="@(ViewBag.subnav == "sn1-2" ? "current" : "")">中心理念</a>
+            <a href="~/AboutUs/p3" class="@(ViewBag.subnav == "sn1-3" ? "current" : "")">中心主任</a>
+        </nav>
 
         <h3>關於聯盟</h3>
-        <ul>
-            <li class="tab4"><a href="~/AboutUs/tfta">聯盟簡介</a></li>
-            <li class="tab5"><a href="~/AboutUs/tfta2">聯盟理念</a></li>
-            <li class="tab6"><a href="~/AboutUs/tfta3">聯盟成員</a></li>
-        </ul>
+        <nav>
+            <a href="~/AboutUs/tfta" class="@(ViewBag.subnav == "sn1-4" ? "current" : "")">聯盟簡介</a>
+            <a href="~/AboutUs/tfta2" class="@(ViewBag.subnav == "sn1-5" ? "current" : "")">聯盟理念</a>
+            <a href="~/AboutUs/tfta3" class="@(ViewBag.subnav == "sn1-6" ? "current" : "")">聯盟成員</a>
+        </nav>
     }
 
     @if (c == "Member")
     {
         <h3>中心成員</h3>
-        <ul>
-            <li class="tab1"><a href="~/Member/index">中心成員</a></li>
-            <li class="tab2"><a href="~/Member/p2">博士生</a></li>
-            <li class="tab3"><a href="~/Member/p3">碩士生</a></li>
-        </ul>
+        <nav>
+            <a href="~/Member/index" class="@(ViewBag.subnav == "sn2-1" ? "current" : "")">中心成員</a>
+            <a href="~/Member/p2" class="@(ViewBag.subnav == "sn2-2" ? "current" : "")">博士生</a>
+            <a href="~/Member/p3" class="@(ViewBag.subnav == "sn2-3" ? "current" : "")">碩士生</a>
+        </nav>
     }
 
-    @if (c == "News")
-    {
-    }
-
-    @if (c == "Tech")
-    {
-    }
-
-    @if (c == "Equip")
-    {
-    }
-
-    @if (c == "ContactUs")
-    {
-    }
-
-    @if (c == "Download")
-    {
-    }
-
-    @if (c == "Albums")
-    {
-    }
+    @if (c == "News") {}
+    @if (c == "Tech") {}
+    @if (c == "Equip") {}
+    @if (c == "ContactUs") {}
+    @if (c == "Download") {}
+    @if (c == "Albums") {}
 
     <a href="~/ContactUs" class="contact">聯絡我們</a>
+
     @* <h3 class="link">網網相連</h3>
     <ul class="link">
         <li>

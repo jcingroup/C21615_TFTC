@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "中心簡介";
     Layout = "~/Views/Shared/Layout.cshtml";
+    ViewBag.subnav = "sn1-1";
 }
 
 @section breadCrumb {
@@ -13,10 +14,8 @@
     <h3><span>中心簡介</span>ABOUT TFTC</h3>
 
     <div id="upload">
-        <!--編輯器資料-->
+        @* 編輯器資料 *@
         @Html.Raw(Model.pagecontext)
-    </div>
-    <!-- upload //-->
+    </div><!-- upload //-->
 
-</div>
-<!-- content //-->
+</div><!-- content //-->

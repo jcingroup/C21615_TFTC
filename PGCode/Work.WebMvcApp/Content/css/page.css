@@ -2,9 +2,111 @@
 @import "base/layout.css";
 @charset "utf-8";
 
+/*      sidebar
+-----------------------------------------------------------------------*/
+
+#sidebar h3 {
+    height: 23px;
+    padding: 10px 0 0 50px;
+    color: #B58A69;
+    font-size: 1.5em;
+    font-weight: bold;
+    background: url('../images/menu2.gif') 0 bottom no-repeat;
+    border-bottom: 2px solid #D1EAEB;
+}
+
+/*
+.News #sidebar h3,
+.Tech #sidebar h3,
+.Equip #sidebar h3,
+.ContactUs #sidebar h3,
+.Download #sidebar h3,
+.Albums #sidebar h3, */
+.Member #sidebar h3 {
+    background-position: 0 -60px;
+}
+
+.AboutUs #sidebar h3:first-of-type {
+    background-image: url('../images/AboutUs/icon_center.gif');
+}
+.AboutUs #sidebar h3:nth-of-type(2) {
+    background-image: url('../images/AboutUs/icon_tfta.gif');
+}
+
+#sidebar nav {
+    margin-bottom: 30px;
+}
+
+#sidebar a {
+    display: block;
+    padding: 7px 0 7px 50px;
+    font-weight: bold;
+}
+
+#sidebar nav a {
+    color: #637B80;
+    font-size: 1.1em;
+    background: #E3EAED;
+    margin-top: 2px;
+    transition: background .5s ease;
+}
+
+#sidebar nav a:hover,
+#sidebar nav .current {
+    color: #00AFC0;
+    background-color: #FFF;
+}
+
+#sidebar .contact {
+    background: url('../images/nav_contact.gif') 0 0 no-repeat;
+    font-size: 1.429em;
+    color: #B58A69;
+    padding-top: 11px;
+    padding-bottom: 11px;
+}
+#sidebar .contact:hover {
+    background-position: 0 -68px;
+    color: #f6f6f6;
+}
+
+/*#sidebar .link {
+    background: url('../../images/icon.png') no-repeat 0 -107px;
+    border: 0;
+    margin: 3px 0 0 0;
+    padding-top: 15px;
+    background: url('../../images/dot.gif') repeat-x;
+}
+
+#sidebar .link li {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#sidebar .link a {
+    display: inline;
+    padding: 0;
+    background: none;
+}
+
+.link img {
+    width: 190px;
+}*/
+
+/*-- basic --*/
+
+#content h3 {
+    margin-bottom: 15px;
+}
+
+img.shadow {
+    padding-bottom: 19px;
+    width: 305px;
+    background: url('../images/bg3.gif') no-repeat center bottom;
+}
+
 /* pager */
 
-ul.pager {
+.pager {
     float: left;
     width: 405px;
     margin: 10px auto;
@@ -13,17 +115,18 @@ ul.pager {
     clear: both;
 }
 
-ul.pager li {
+.pager li {
     font-size: 0.85em;
     text-indent: 0;
     margin: 0 2px;
     display: inline-block;
+    vertical-align: middle;
     *display: inline;
     *zoom: 1;
     background: none;
 }
 
-ul.pager a {
+.pager a {
     background-attachment: fixed;
     border: 1px solid #eaeaea;
     color: #999;
@@ -33,17 +136,17 @@ ul.pager a {
     padding: 2px 5px;
 }
 
-ul.pager a:hover {
+.pager a:hover {
     background: #eee;
 }
 
-ul.pager li.current {
+.pager li.current {
     color: #00AFC0;
     padding: 2px 6px;
 }
 
-ul.pager li.prev a,
-ul.pager li.next a {
+.pager li.prev a,
+.pager li.next a {
     width: 0px;
     height: 0px;
     padding: 0;
@@ -53,23 +156,23 @@ ul.pager li.next a {
     border-color: transparent #FFC73B transparent transparent;
 }
 
-ul.pager li.next a {
+.pager li.next a {
     border-width: 3px 0 3px 6px;
     border-color: transparent transparent transparent #FFC73B;
 }
 
-ul.pager li.prev a:hover,
-ul.pager li.next a:hover {
+.pager li.prev a:hover,
+.pager li.next a:hover {
     border-color: transparent #00AFC0 transparent transparent;
     background: none;
 }
 
-ul.pager li.next a:hover {
+.pager li.next a:hover {
     border-color: transparent transparent transparent #00AFC0;
 }
 
 
-/* �s�边reset */
+/* 內頁reset */
 
 #upload {
     margin: 0 0 20px 21px;
@@ -131,7 +234,7 @@ ul.pager li.next a:hover {
 
 /* ����U�� */
 
-#upload dl.download {
+#upload .download {
     margin: 0 0 10px 0;
     padding: 10px;
     background: #fff;
@@ -153,7 +256,7 @@ ul.pager li.next a:hover {
 
 /* news */
 
-ul.newslist {
+.newslist {
     float: left;
     width: 405px;
 }
@@ -421,14 +524,4 @@ ul.file {
 /*-- layout --*/
 
 
-/*-- basic --*/
 
-#content h3 {
-    margin-bottom: 15px;
-}
-
-img.shadow {
-    padding-bottom: 19px;
-    width: 305px;
-    background: url('../images/bg3.gif') no-repeat center bottom;
-}

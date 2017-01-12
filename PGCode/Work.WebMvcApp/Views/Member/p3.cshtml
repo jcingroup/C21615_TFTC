@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "碩士生";
     Layout = "~/Views/Shared/Layout.cshtml";
+    ViewBag.subnav = "sn2-3";
 }
 
 @section breadCrumb {
@@ -9,11 +10,12 @@
 }
 
 <div id="content">
-            
-            <h3><span>碩士生</span>MS.D STUDENTS</h3>
-            
-            <div id="upload"><!--編輯器資料-->
- @Html.Raw(Model.pagecontext)
-              </div><!-- upload //-->
-            
-          </div><!-- content //-->
+
+    <h3><span>碩士生</span>MS.D STUDENTS</h3>
+
+    <div id="upload">
+        @* 編輯器資料 *@
+        @Html.Raw(Model.pagecontext)
+    </div><!-- upload //-->
+
+</div><!-- content //-->

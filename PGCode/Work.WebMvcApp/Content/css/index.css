@@ -2,6 +2,20 @@
 @import "base/layout.css";
 @charset "utf-8";
 
+/*-- all --*/
+
+h3 {
+    margin: 0;
+    padding-bottom: 15px;
+    background-image: url('../images/dot3.gif');
+}
+
+h3 span {
+    margin: 0;
+    padding: 5px 0 8px 42px;
+    background: url('../images/icon.png') no-repeat -5px 0;
+}
+
 /* news */
 
 .news {
@@ -11,7 +25,6 @@
 }
 
 .news h3 span {
-    padding-left: 45px;
     background-position: 0 -56px;
 }
 
@@ -60,10 +73,14 @@
 
 /* about */
 
-.about {
+.about,
+.album {
     float: left;
     width: 620px;
-    margin-bottom: 30px;
+}
+
+.about {
+    margin-bottom: 35px;
     color: #666;
 }
 
@@ -79,14 +96,14 @@
 .about p {
     width: 600px;
     margin: 0 auto;
-    font-size: .95em;
+    /*font-size: .95em;*/
     text-indent: 0;
 }
 
 
 /* link */
 
-.link {
+/*.link {
     float: left;
     width: 242px;
     margin-right: 36px;
@@ -105,45 +122,83 @@
 .link li {
     margin-top: 10px;
     text-align: center;
-}
+}*/
 
 
 /* album */
 
-.album {
-    float: left;
-    width: 340px;
-}
-
 .album h3 {
-    margin-bottom: 12px;
+    /*margin-bottom: 12px;*/
     background-image: url('../images/dot.gif');
 }
 
 .album h3 span {
-    padding-left: 54px;
-    background-position: 0 -163px;
+    /*padding-left: 54px;*/
+    /*background-position: 0 -163px;*/
+    background-position: 0 center;
+    background-image: url('../images/index/icon_album.gif');
 }
 
-.album img {
+figure {
+    position: relative;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+figure > a {
+    width: 100%; height: 100%;
+    position: absolute;
+    left: 0; top: 0;
+    opacity: 0;
+    background: #fff; /* for ie bug */
+}
+
+figcaption {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    margin-left: 15px;
+    margin-top: 12px;
+    font-size: 1.22em;
+    -webkit-transition: color .3s;
+    -ms-transition: color .3s;
+    transition: color .3s;
+}
+figcaption::before, figcaption::after {
+    pointer-events: none;
+}
+
+figure img,
+figcaption { float: left; }
+
+figure img {
     display: block;
     width: 334px;
-    margin: 0 auto 10px auto;
+    /*margin: 0 auto 10px 0;*/
     border: 2px solid #ddd;
+    -webkit-transition: border-color .5s;
+    -ms-transition: border-color .5s;
+    transition: border-color .5s;
 }
 
-.album a {
+figure:hover figcaption { color: #b3b3b3 }
+figure:hover img {
+    border-color: #fff;
+    -webkit-box-shadow: 0 0 5px #ccc;
+    box-shadow: 0 0 5px #ccc;
+}
+
+/*.album a {
     color: #666;
     font-weight: bold;
 }
 
 .album a:hover {
     color: #B3B3B3;
-}
+}*/
 
-a.more {
-    position: absolute;
+.more {
     display: block;
+    position: absolute;
     top: 0;
     right: 0;
     width: 39px;
@@ -154,7 +209,7 @@ a.more {
     background: url('../images/more.png') no-repeat;
 }
 
-a.more:hover {
+.more:hover {
     color: #EF8F00;
 }
 
@@ -172,8 +227,9 @@ a.more:hover {
 /* main */
 
 #main {
-    margin-top: 15px;
-    background: none;
+    margin-top: 1px;
+    padding-top: 35px;
+    background-image: url('../images/bg2.gif');
 }
 
 #main > div {
@@ -181,7 +237,7 @@ a.more:hover {
 }
 
 
-/* banner���� */
+/* banner輪播 */
 
 #slider {
     height: 325px;
@@ -339,20 +395,4 @@ a.more:hover {
 }
 
 
-/*-- basic --*/
 
-body {
-    background-image: url('../images/Index/bg.gif');
-}
-
-h3 {
-    margin: 0;
-    padding-bottom: 17px;
-    background-image: url('../images/dot3.gif');
-}
-
-h3 span {
-    margin: 0;
-    padding: 5px 0 8px 42px;
-    background: url('../images/icon.png') no-repeat -5px 0;
-}

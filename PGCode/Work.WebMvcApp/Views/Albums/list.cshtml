@@ -13,11 +13,12 @@
     <h3><span>活動剪影</span>ALBUMS</h3>
 
     <ol class="photo">
-        <!--圖片寬度至少334px，一頁建議6本相簿-->
+        @* 圖片寬度至少334px，一頁建議6本相簿 *@
+        @* 合併聯盟資料 *@
         @foreach (m_ActivePhoto md in Model)
         {
             var p = Html.ImgSrc("Sys_Active", "ActivePhoto", md.id, "ListIcon", 334);
-            
+
             <li><a href="~/Albums/content/@md.id">
                 <img src="@p"><em>@md.title</em></a></li>
         }

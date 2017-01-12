@@ -28,6 +28,7 @@
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -297,6 +298,8 @@
     <Content Include="Content\css\editor.css" />
     <Content Include="Content\css\index.css" />
     <Content Include="Content\css\page.css" />
+    <Content Include="Content\images\AboutUs\icon_center.gif" />
+    <Content Include="Content\images\AboutUs\icon_tfta.gif" />
     <Content Include="Content\images\AboutUs\pic1.jpg" />
     <Content Include="Content\images\AboutUs\pic2.jpg" />
     <Content Include="Content\images\AboutUs\pic3.jpg" />
@@ -308,6 +311,7 @@
     <Content Include="Content\images\banner.swf" />
     <Content Include="Content\images\banner1.jpg" />
     <Content Include="Content\images\bg.gif" />
+    <Content Include="Content\images\bg2.gif" />
     <Content Include="Content\images\bg2.jpg" />
     <Content Include="Content\images\bg3.gif" />
     <Content Include="Content\images\date.png" />
@@ -344,6 +348,7 @@
     <Content Include="Content\images\Index\banner2.jpg" />
     <Content Include="Content\images\Index\banner3.jpg" />
     <Content Include="Content\images\Index\bg.gif" />
+    <Content Include="Content\images\Index\icon_album.gif" />
     <Content Include="Content\images\Index\pic1.jpg" />
     <Content Include="Content\images\Link\DOP.jpg" />
     <Content Include="Content\images\Link\logo1.jpg" />
@@ -390,6 +395,7 @@
     <Content Include="Content\images\menu.gif" />
     <Content Include="Content\images\menu2.gif" />
     <Content Include="Content\images\more.png" />
+    <Content Include="Content\images\nav_contact.gif" />
     <Content Include="Content\images\News\pic1.jpg" />
     <Content Include="Content\images\News\pic2.jpg" />
     <Content Include="Content\images\social.gif" />
@@ -541,6 +547,9 @@
     <Content Include="Views\Tech\Index.cshtml" />
     <Content Include="Views\Equip\Index.cshtml" />
     <Content Include="Views\Download\Index.cshtml" />
+    <Content Include="Views\AboutUs\tfta.cshtml" />
+    <Content Include="Views\AboutUs\tfta2.cshtml" />
+    <Content Include="Views\AboutUs\tfta3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_GlobalResources\App_Data\" />
