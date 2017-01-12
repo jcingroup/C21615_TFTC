@@ -1,0 +1,719 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{15DF1E9F-D17F-4692-8B96-FBA63E810370}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DotWeb.WebApp</RootNamespace>
+    <AssemblyName>Proc.MvcWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="CKFinder, Version=2.3.1.2492, Culture=neutral, PublicKeyToken=579e7adc719a1423, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>_Code\ckfinder_aspnet_2.3.1\bin\Debug\CKFinder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Proc.DatabaseCore, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Proc.DatabaseCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Proc.DotNetExtension, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Proc.DotNetExtension.dll</HintPath>
+    </Reference>
+    <Reference Include="Proc.ExceptionDefine, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Proc.ExceptionDefine.dll</HintPath>
+    </Reference>
+    <Reference Include="Proc.LogWriteHelper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Proc.LogWriteHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Proc.ProjectHelper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Proc.ProjectHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_GlobalResources\Res.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Res.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ResWeb1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResWeb.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Areas\Sys_Active\Controllers\ActivePhotoController.cs" />
+    <Compile Include="Areas\Sys_Active\Controllers\PageContextController.cs" />
+    <Compile Include="Areas\Sys_Active\Controllers\ParamController.cs" />
+    <Compile Include="Areas\Sys_Active\Controllers\DocumentController.cs" />
+    <Compile Include="Areas\Sys_Active\Sys_ActiveAreaRegistration.cs" />
+    <Compile Include="Areas\Sys_Base\Controllers\CodeController.cs" />
+    <Compile Include="Areas\Sys_Base\Controllers\PowerUnitController.cs" />
+    <Compile Include="Areas\Sys_Base\Controllers\PowerUsersController.cs" />
+    <Compile Include="Areas\Sys_Base\Controllers\ProgController.cs" />
+    <Compile Include="Areas\Sys_Base\Controllers\SystemLoginController.cs" />
+    <Compile Include="Areas\Sys_Base\Controllers\UnitController.cs" />
+    <Compile Include="Areas\Sys_Base\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Sys_Base\Controllers\XYZController.cs" />
+    <Compile Include="Areas\Sys_Base\Controllers\ParmController.cs" />
+    <Compile Include="Areas\Sys_Base\Controllers\DocController.cs" />
+    <Compile Include="Areas\Sys_Base\Sys_BaseAreaRegistration.cs" />
+    <Compile Include="Areas\Sys_Active\Controllers\MessageController.cs" />
+    <Compile Include="Areas\Sys_Example\Sys_ExampleAreaRegistration.cs" />
+    <Compile Include="Areas\Sys_League\Controllers\MessageController.cs" />
+    <Compile Include="Areas\Sys_League\Controllers\PageContextController.cs" />
+    <Compile Include="Areas\Sys_League\Controllers\DocumentController.cs" />
+    <Compile Include="Areas\Sys_League\Controllers\ActivePhotoController.cs" />
+    <Compile Include="Areas\Sys_League\Sys_LeagueAreaRegistration.cs" />
+    <Compile Include="Areas\tfta\Controllers\AboutUsController.cs" />
+    <Compile Include="Areas\tfta\Controllers\AlbumsController.cs" />
+    <Compile Include="Areas\tfta\Controllers\ContactUsController.cs" />
+    <Compile Include="Areas\tfta\Controllers\DownloadController.cs" />
+    <Compile Include="Areas\tfta\Controllers\EquipController.cs" />
+    <Compile Include="Areas\tfta\Controllers\IndexController.cs" />
+    <Compile Include="Areas\tfta\Controllers\NewsController.cs" />
+    <Compile Include="Areas\tfta\tftaAreaRegistration.cs" />
+    <Compile Include="Controllers\AlbumsController.cs" />
+    <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
+    <Compile Include="Controllers\DownloadController.cs" />
+    <Compile Include="Controllers\EquipController.cs" />
+    <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
+    <Compile Include="Controllers\TechController.cs" />
+    <Compile Include="Controllers\_SysAdmController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_Code\Ashx\AjaxDownLoadFile.ashx.cs">
+      <DependentUpon>AjaxDownLoadFile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="_Code\Ashx\AjaxGetCounty.ashx.cs">
+      <DependentUpon>AjaxGetCounty.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="_Code\Ashx\AjaxGetZip.ashx.cs">
+      <DependentUpon>AjaxGetZip.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="_Code\Ashx\BaseIHttpHandler.cs" />
+    <Compile Include="_Code\Ashx\ValidateCode.ashx.cs">
+      <DependentUpon>ValidateCode.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="_Code\Ashx\ValidateCode_AddMember.ashx.cs">
+      <DependentUpon>ValidateCode_AddMember.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="_Code\Ashx\ValidateCode_Forgot.ashx.cs">
+      <DependentUpon>ValidateCode_Forgot.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="_Code\Ashx\ValidateCode_Order.ashx.cs">
+      <DependentUpon>ValidateCode_Order.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="_Code\Ashx\AjaxGetRoad.ashx.cs">
+      <DependentUpon>AjaxGetRoad.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="_Code\CommClass\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_Code\CommClass\BaseWebController.cs" />
+    <Compile Include="_Code\CommClass\CommWebSetup.cs" />
+    <Compile Include="_Code\CommClass\HtmlHelpers.cs" />
+    <Compile Include="_Code\CommClass\Pager\IPagedList.cs" />
+    <Compile Include="_Code\CommClass\Pager\PagedList.cs" />
+    <Compile Include="_Code\CommClass\Pager\Pager.cs" />
+    <Compile Include="_Code\CommClass\Pager\PagingExtensions.cs" />
+    <Compile Include="_Code\CommClass\RptPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_GlobalResources\ResWeb.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ResWeb1.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\tfta\Content\css\base\basic.css" />
+    <Content Include="Areas\tfta\Content\css\base\layout.css" />
+    <Content Include="Areas\tfta\Content\css\index.css" />
+    <Content Include="Areas\tfta\Content\css\page.css" />
+    <Content Include="Areas\tfta\Content\images\AboutUs\pic1.jpg" />
+    <Content Include="Areas\tfta\Content\images\AboutUs\pic2.jpg" />
+    <Content Include="Areas\tfta\Content\images\album.gif" />
+    <Content Include="Areas\tfta\Content\images\Albums\pic1.jpg" />
+    <Content Include="Areas\tfta\Content\images\Albums\pic1_b.jpg" />
+    <Content Include="Areas\tfta\Content\images\arrow.gif" />
+    <Content Include="Areas\tfta\Content\images\arrow2.gif" />
+    <Content Include="Areas\tfta\Content\images\bg.gif" />
+    <Content Include="Areas\tfta\Content\images\bg2.jpg" />
+    <Content Include="Areas\tfta\Content\images\bg3.gif" />
+    <Content Include="Areas\tfta\Content\images\contact.gif" />
+    <Content Include="Areas\tfta\Content\images\dot.gif" />
+    <Content Include="Areas\tfta\Content\images\dot2.gif" />
+    <Content Include="Areas\tfta\Content\images\Download\pic1.jpg" />
+    <Content Include="Areas\tfta\Content\images\footerbg.gif" />
+    <Content Include="Areas\tfta\Content\images\icon.gif" />
+    <Content Include="Areas\tfta\Content\images\Index\banner1.jpg" />
+    <Content Include="Areas\tfta\Content\images\Index\banner2.jpg" />
+    <Content Include="Areas\tfta\Content\images\link.gif" />
+    <Content Include="Areas\tfta\Content\images\Link\DOP.jpg" />
+    <Content Include="Areas\tfta\Content\images\Link\logo1.jpg" />
+    <Content Include="Areas\tfta\Content\images\logo.png" />
+    <Content Include="Areas\tfta\Content\images\logo.swf" />
+    <Content Include="Areas\tfta\Content\images\menu.gif" />
+    <Content Include="Areas\tfta\Content\images\menu2.gif" />
+    <Content Include="Areas\tfta\Content\images\news.gif" />
+    <Content Include="Areas\tfta\Content\images\News\pic1.jpg" />
+    <Content Include="Areas\tfta\Content\images\News\pic2.jpg" />
+    <Content Include="Areas\tfta\Content\images\social.gif" />
+    <Content Include="Areas\tfta\Content\images\tftc.png" />
+    <Content Include="Content\css\base\basic.css" />
+    <Content Include="Content\css\base\layout.css" />
+    <Content Include="Content\css\editor.css" />
+    <Content Include="Content\css\index.css" />
+    <Content Include="Content\css\page.css" />
+    <Content Include="Content\images\AboutUs\pic1.jpg" />
+    <Content Include="Content\images\AboutUs\pic2.jpg" />
+    <Content Include="Content\images\AboutUs\pic3.jpg" />
+    <Content Include="Content\images\AboutUs\pic4.jpg" />
+    <Content Include="Content\images\Albums\pic1.jpg" />
+    <Content Include="Content\images\Albums\pic1_b.jpg" />
+    <Content Include="Content\images\arrow.gif" />
+    <Content Include="Content\images\arrow2.gif" />
+    <Content Include="Content\images\banner.swf" />
+    <Content Include="Content\images\banner1.jpg" />
+    <Content Include="Content\images\bg.gif" />
+    <Content Include="Content\images\bg2.jpg" />
+    <Content Include="Content\images\bg3.gif" />
+    <Content Include="Content\images\date.png" />
+    <Content Include="Content\images\dot.gif" />
+    <Content Include="Content\images\dot2.gif" />
+    <Content Include="Content\images\dot3.gif" />
+    <Content Include="Content\images\dot4.gif" />
+    <Content Include="Content\images\Download\pic1.jpg" />
+    <Content Include="Content\images\Equip\X光繞射儀.jpg" />
+    <Content Include="Content\images\Equip\冷陰極場發射掃描式電子顯微鏡.jpg" />
+    <Content Include="Content\images\Equip\半導體參數分析儀.jpg" />
+    <Content Include="Content\images\Equip\原子力顯微鏡.jpg" />
+    <Content Include="Content\images\Equip\多腔式磁控濺鍍系統.jpg" />
+    <Content Include="Content\images\Equip\太陽光源模擬器.jpg" />
+    <Content Include="Content\images\Equip\定光電流量測儀.jpg" />
+    <Content Include="Content\images\Equip\射頻離子束濺鍍系統.jpg" />
+    <Content Include="Content\images\Equip\廣波域光譜儀.jpg" />
+    <Content Include="Content\images\Equip\手套箱.jpg" />
+    <Content Include="Content\images\Equip\橢圓偏振儀.jpg" />
+    <Content Include="Content\images\Equip\熱蒸鍍機.jpg" />
+    <Content Include="Content\images\Equip\磁控濺鍍系統.jpg" />
+    <Content Include="Content\images\Equip\紅外線光譜儀.jpg" />
+    <Content Include="Content\images\Equip\表面能量元素分析儀.jpg" />
+    <Content Include="Content\images\Equip\表面輪廓儀.jpg" />
+    <Content Include="Content\images\Equip\載子生命週期量測儀.jpg" />
+    <Content Include="Content\images\Equip\雙電子槍離子輔助蒸鍍系統.jpg" />
+    <Content Include="Content\images\Equip\電子槍熱蒸鍍系統.jpg" />
+    <Content Include="Content\images\Equip\電漿式有機鍍膜系統.jpg" />
+    <Content Include="Content\images\Equip\黃光室.jpg" />
+    <Content Include="Content\images\footerbg.gif" />
+    <Content Include="Content\images\icon.gif" />
+    <Content Include="Content\images\icon.png" />
+    <Content Include="Content\images\Index\banner1.jpg" />
+    <Content Include="Content\images\Index\banner2.jpg" />
+    <Content Include="Content\images\Index\banner3.jpg" />
+    <Content Include="Content\images\Index\bg.gif" />
+    <Content Include="Content\images\Index\pic1.jpg" />
+    <Content Include="Content\images\Link\DOP.jpg" />
+    <Content Include="Content\images\Link\logo1.jpg" />
+    <Content Include="Content\images\Link\most.jpg" />
+    <Content Include="Content\images\Link\ncu.jpg" />
+    <Content Include="Content\images\Link\pida.jpg" />
+    <Content Include="Content\images\Link\tfta.jpg" />
+    <Content Include="Content\images\Link\tps.jpg" />
+    <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\logo.swf" />
+    <Content Include="Content\images\mail.gif" />
+    <Content Include="Content\images\Member\member01.jpg" />
+    <Content Include="Content\images\Member\member02.jpg" />
+    <Content Include="Content\images\Member\member03.jpg" />
+    <Content Include="Content\images\Member\member04.jpg" />
+    <Content Include="Content\images\Member\member05.jpg" />
+    <Content Include="Content\images\Member\member06.jpg" />
+    <Content Include="Content\images\Member\member07.jpg" />
+    <Content Include="Content\images\Member\msd01.jpg" />
+    <Content Include="Content\images\Member\msd02.jpg" />
+    <Content Include="Content\images\Member\msd03.JPG" />
+    <Content Include="Content\images\Member\msd04.jpg" />
+    <Content Include="Content\images\Member\msd05.jpg" />
+    <Content Include="Content\images\Member\msd06.jpg" />
+    <Content Include="Content\images\Member\msd07.jpg" />
+    <Content Include="Content\images\Member\msd08.jpg" />
+    <Content Include="Content\images\Member\msd13.JPG" />
+    <Content Include="Content\images\Member\msd14.jpg" />
+    <Content Include="Content\images\Member\msd15.jpg" />
+    <Content Include="Content\images\Member\msd16.jpg" />
+    <Content Include="Content\images\Member\msd17.jpg" />
+    <Content Include="Content\images\Member\msd18.jpg" />
+    <Content Include="Content\images\Member\msd23.JPG" />
+    <Content Include="Content\images\Member\msd26.jpg" />
+    <Content Include="Content\images\Member\msd27.jpg" />
+    <Content Include="Content\images\Member\msd28.jpg" />
+    <Content Include="Content\images\Member\nopic.jpg" />
+    <Content Include="Content\images\Member\phd01.jpg" />
+    <Content Include="Content\images\Member\phd02.jpg" />
+    <Content Include="Content\images\Member\phd03.jpg" />
+    <Content Include="Content\images\Member\phd04.JPG" />
+    <Content Include="Content\images\Member\phd05.JPG" />
+    <Content Include="Content\images\Member\phd06.jpg" />
+    <Content Include="Content\images\menu.gif" />
+    <Content Include="Content\images\menu2.gif" />
+    <Content Include="Content\images\more.png" />
+    <Content Include="Content\images\News\pic1.jpg" />
+    <Content Include="Content\images\News\pic2.jpg" />
+    <Content Include="Content\images\social.gif" />
+    <Content Include="Content\images\tfta.gif" />
+    <Content Include="Global.asax" />
+    <Content Include="Areas\Sys_Active\Views\PageContext\EditData.cshtml" />
+    <Content Include="Areas\Sys_Active\Views\PageContext\ListData.cshtml" />
+    <Content Include="Areas\Sys_Active\Views\Param\EditData.cshtml" />
+    <Content Include="Areas\Sys_Base\Views\Doc\ListData.cshtml" />
+    <Content Include="Areas\tfta\Views\Shared\Web.config" />
+    <Content Include="Areas\tfta\Views\Shared\Layout.cshtml" />
+    <Content Include="Areas\tfta\Views\Index\Index.cshtml" />
+    <Content Include="Areas\tfta\Views\AboutUs\Index.cshtml" />
+    <Content Include="Areas\tfta\Views\AboutUs\p2.cshtml" />
+    <Content Include="Areas\tfta\Views\AboutUs\p3.cshtml" />
+    <Content Include="Areas\tfta\Views\Albums\list.cshtml" />
+    <Content Include="Areas\tfta\Views\Albums\content.cshtml" />
+    <Content Include="Areas\tfta\Views\News\list.cshtml" />
+    <Content Include="Areas\tfta\Views\News\content.cshtml" />
+    <Content Include="Areas\tfta\Views\ContactUs\Index.cshtml" />
+    <Content Include="Areas\tfta\Views\Download\Index.cshtml" />
+    <Content Include="Areas\tfta\Views\Shared\sidebar.cshtml" />
+    <Content Include="Areas\tfta\Views\AboutUs\p4.cshtml" />
+    <Content Include="Areas\Sys_League\Views\Web.config" />
+    <Content Include="Areas\Sys_League\Views\Message\EditData.cshtml" />
+    <Content Include="Areas\Sys_League\Views\Message\ListData.cshtml" />
+    <Content Include="Areas\Sys_League\Views\PageContext\EditData.cshtml" />
+    <Content Include="Areas\Sys_League\Views\PageContext\ListData.cshtml" />
+    <Content Include="Areas\Sys_League\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\tfta\Views\AboutUs\p5.cshtml" />
+    <Content Include="Areas\tfta\Views\Equip\Index.cshtml" />
+    <Content Include="Areas\tfta\Content\images\Download\薄膜技術聯盟協議書%28Final%29.docx" />
+    <Content Include="Areas\tfta\Content\images\Equip\2013中心收費標準.pdf" />
+    <Content Include="Areas\Sys_League\Views\Document\EditData.cshtml" />
+    <Content Include="Areas\Sys_League\Views\Document\ListData.cshtml" />
+    <Content Include="Areas\Sys_League\Views\ActivePhoto\EditData.cshtml" />
+    <Content Include="Areas\Sys_League\Views\ActivePhoto\ListData.cshtml" />
+    <Content Include="Areas\Sys_Active\Views\Document\EditData.cshtml" />
+    <Content Include="Areas\Sys_Active\Views\Document\ListData.cshtml" />
+    <Content Include="Areas\Sys_Active\Views\ActivePhoto\EditData.cshtml" />
+    <Content Include="Areas\Sys_Active\Views\ActivePhoto\ListData.cshtml" />
+    <None Include="Properties\PublishProfiles\發行至中央大學.pubxml" />
+    <None Include="Properties\PublishProfiles\發行至檔案.pubxml" />
+    <Content Include="Areas\Sys_Example\Views\object under input.html" />
+    <Content Include="Scripts\fancybox\lib\jquery-1.10.1.min.js" />
+    <Content Include="Scripts\fancybox\lib\jquery-1.9.0.min.js" />
+    <Content Include="Scripts\fancybox\lib\jquery.mousewheel-3.0.6.pack.js" />
+    <Content Include="Scripts\fancybox\source\blank.gif" />
+    <Content Include="Scripts\fancybox\source\fancybox_loading%402x.gif" />
+    <Content Include="Scripts\fancybox\source\fancybox_loading.gif" />
+    <Content Include="Scripts\fancybox\source\fancybox_overlay.png" />
+    <Content Include="Scripts\fancybox\source\fancybox_sprite%402x.png" />
+    <Content Include="Scripts\fancybox\source\fancybox_sprite.png" />
+    <Content Include="Scripts\fancybox\source\helpers\fancybox_buttons.png" />
+    <Content Include="Scripts\fancybox\source\helpers\jquery.fancybox-buttons.css" />
+    <Content Include="Scripts\fancybox\source\helpers\jquery.fancybox-buttons.js" />
+    <Content Include="Scripts\fancybox\source\helpers\jquery.fancybox-media.js" />
+    <Content Include="Scripts\fancybox\source\helpers\jquery.fancybox-thumbs.css" />
+    <Content Include="Scripts\fancybox\source\helpers\jquery.fancybox-thumbs.js" />
+    <Content Include="Scripts\fancybox\source\jquery.fancybox.css" />
+    <Content Include="Scripts\fancybox\source\jquery.fancybox.js" />
+    <Content Include="Scripts\fancybox\source\jquery.fancybox.pack.js" />
+    <Content Include="Scripts\fancybox\source\set.js" />
+    <Content Include="Scripts\masonry.pkgd.min.js" />
+    <Content Include="Scripts\nivo-slider\jquery.nivo.slider.js" />
+    <Content Include="Scripts\nivo-slider\nivo-slider.css" />
+    <Content Include="Scripts\scroll.js" />
+    <Content Include="Scripts\swfobject.js" />
+    <Content Include="Views\Shared\EditorTemplates\vuc_DateTime.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\vuc_LabelText.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="_Code\ckeditor_4.1.2_full\config.js" />
+    <Content Include="_Code\CSS\commStyle.css" />
+    <Content Include="_Code\CSS\formStyle.css" />
+    <Content Include="_Code\CSS\login.css" />
+    <Content Include="_Code\Images\banner.jpg" />
+    <Content Include="_Code\Images\bg.gif" />
+    <Content Include="_Code\Images\btn_bg.gif" />
+    <Content Include="_Code\Images\form_line.gif" />
+    <Content Include="_Code\Images\h1_bg.gif" />
+    <Content Include="_Code\Images\header_bg.png" />
+    <Content Include="_Code\Images\login_bg.png" />
+    <Content Include="_Code\Images\pic.png" />
+    <Content Include="_Code\Images\sys_bg.gif" />
+    <Content Include="_Code\Images\sys_bg2.gif" />
+    <Content Include="_Code\jqScript\commfunc.js" />
+    <Content Include="_Code\jqScript\webfunc.js" />
+    <Content Include="_Code\jqScript\mobilefunc.js" />
+    <Content Include="_Code\Log\memo.txt" />
+    <Content Include="_Code\Maindoor\body\images\banner.jpg" />
+    <Content Include="_Code\Maindoor\body\images\inputBg.gif" />
+    <Content Include="_Code\Maindoor\body\images\leftBg.gif" />
+    <Content Include="_Code\Maindoor\body\images\leftNavBg.gif" />
+    <Content Include="_Code\Maindoor\body\images\login.gif" />
+    <Content Include="_Code\Maindoor\body\images\loginBg.gif" />
+    <Content Include="_Code\Maindoor\body\images\loginBg2.gif" />
+    <Content Include="_Code\Maindoor\body\images\loginBtn.gif" />
+    <Content Include="_Code\Maindoor\body\images\loginLogo.gif" />
+    <Content Include="_Code\Maindoor\body\images\login_out.gif" />
+    <Content Include="_Code\Maindoor\body\images\topBg.gif" />
+    <Content Include="_Code\SysDoc\album1.html" />
+    <Content Include="_Code\SysDoc\album1.swf" />
+    <Content Include="_Code\SysDoc\album2.html" />
+    <Content Include="_Code\SysDoc\album2.swf" />
+    <Content Include="_Code\SysDoc\album3.html" />
+    <Content Include="_Code\SysDoc\album3.swf" />
+    <Content Include="_Code\SysDoc\Doc.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="_Code\SysDoc\download1.html" />
+    <Content Include="_Code\SysDoc\download1.swf" />
+    <Content Include="_Code\SysDoc\download2.html" />
+    <Content Include="_Code\SysDoc\download2.swf" />
+    <Content Include="_Code\SysDoc\news1.html" />
+    <Content Include="_Code\SysDoc\news1.swf" />
+    <Content Include="_Code\SysDoc\news2.html" />
+    <Content Include="_Code\SysDoc\news2.swf" />
+    <Content Include="_Code\SysDoc\news3.html" />
+    <Content Include="_Code\SysDoc\news3.swf" />
+    <Content Include="_Code\SysDoc\web1.html" />
+    <Content Include="_Code\SysDoc\web1.swf" />
+    <Content Include="_Code\SysUpFiles\memo.txt" />
+    <Content Include="_Code\Ashx\ValidateCode_AddMember.ashx" />
+    <Content Include="_Code\Ashx\ValidateCode_Forgot.ashx" />
+    <Content Include="_Code\Ashx\ValidateCode_Order.ashx" />
+    <Content Include="Views\Shared\Manage\includeDialog.cshtml" />
+    <Content Include="_Code\Ashx\AjaxGetRoad.ashx" />
+    <Content Include="Views\Shared\Manage\adr_tw.cshtml" />
+    <Content Include="Views\AboutUs\Index.cshtml" />
+    <Content Include="Views\AboutUs\p2.cshtml" />
+    <Content Include="Views\AboutUs\p3.cshtml" />
+    <Content Include="Views\Albums\list.cshtml" />
+    <Content Include="Views\Albums\content.cshtml" />
+    <Content Include="Views\Member\Index.cshtml" />
+    <Content Include="Views\Member\p2.cshtml" />
+    <Content Include="Views\Member\p3.cshtml" />
+    <Content Include="Views\ContactUs\Index.cshtml" />
+    <Content Include="Views\News\list.cshtml" />
+    <Content Include="Views\News\content.cshtml" />
+    <Content Include="Views\Tech\Index.cshtml" />
+    <Content Include="Views\Equip\Index.cshtml" />
+    <Content Include="Views\Download\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_GlobalResources\App_Data\" />
+    <Folder Include="Areas\Sys_Active\Views\Shared\" />
+    <Folder Include="Areas\Sys_Base\Views\Shared\" />
+    <Folder Include="Areas\Sys_Example\Controllers\" />
+    <Folder Include="Areas\Sys_Example\Views\Shared\" />
+    <Folder Include="Areas\Sys_League\Views\Shared\" />
+    <Folder Include="Resources\" />
+    <Folder Include="_Code\CReport\" />
+    <Folder Include="_Code\RPTExcel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Work.BusinessLogic\Work.BusinessLogic.csproj">
+      <Project>{81f31d0b-5d7a-44f7-ba5b-362bf27fcc8d}</Project>
+      <Name>Work.BusinessLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_Active\Views\Web.config" />
+    <Content Include="Areas\Sys_Active\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Sys_Base\Views\Code\ListData.cshtml" />
+    <Content Include="Areas\Sys_Base\Views\PowerUnit\EditData.cshtml" />
+    <Content Include="Areas\Sys_Base\Views\PowerUsers\EditData.cshtml" />
+    <Content Include="Areas\Sys_Base\Views\Prog\EditData.cshtml" />
+    <Content Include="Areas\Sys_Base\Views\Prog\ListData.cshtml" />
+    <Content Include="Areas\Sys_Base\Views\SystemLogin\index.cshtml" />
+    <Content Include="Areas\Sys_Base\Views\Unit\EditData.cshtml" />
+    <Content Include="Areas\Sys_Base\Views\Unit\ListData.cshtml" />
+    <Content Include="Areas\Sys_Base\Views\Users\EditData.cshtml" />
+    <Content Include="Areas\Sys_Base\Views\Users\ListData.cshtml" />
+    <Content Include="Areas\Sys_Base\Views\Users\Password.cshtml" />
+    <Content Include="Areas\Sys_Base\Views\Web.config" />
+    <Content Include="Areas\Sys_Base\Views\XYZ\Index.cshtml" />
+    <Content Include="Areas\Sys_Base\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Sys_Active\Views\Message\EditData.cshtml" />
+    <Content Include="Areas\Sys_Active\Views\Message\ListData.cshtml" />
+    <Content Include="Areas\Sys_Example\Views\Web.config" />
+    <Content Include="Areas\Sys_Example\Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Manage\includeFiledownload_iFrame.cshtml" />
+    <Content Include="Views\Shared\Manage\includeScript_Comm.cshtml" />
+    <Content Include="Views\Shared\Manage\includeScript_Grid.cshtml" />
+    <Content Include="Views\Shared\Manage\SysLayoutPage.cshtml" />
+    <Content Include="Views\Shared\Manage\vucMenu.cshtml" />
+    <Content Include="_Code\Ashx\AjaxDownLoadFile.ashx" />
+    <Content Include="_Code\Ashx\AjaxGetCounty.ashx" />
+    <Content Include="_Code\Ashx\AjaxGetZip.ashx" />
+    <Content Include="_Code\Ashx\ValidateCode.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_Base\Views\Code\App_LocalResources\ListData.cshtml.resx" />
+    <Content Include="Areas\Sys_Base\Views\PowerUnit\App_LocalResources\EditData.cshtml.resx" />
+    <Content Include="Areas\Sys_Base\Views\Prog\App_LocalResources\EditData.cshtml.resx" />
+    <Content Include="Areas\Sys_Base\Views\Prog\App_LocalResources\ListData.cshtml.resx" />
+    <Content Include="Areas\Sys_Base\Views\SystemLogin\App_LocalResources\index.cshtml.resx" />
+    <Content Include="Areas\Sys_Base\Views\Unit\App_LocalResources\EditData.cshtml.resx" />
+    <Content Include="Areas\Sys_Base\Views\Unit\App_LocalResources\ListData.cshtml.resx" />
+    <Content Include="Areas\Sys_Base\Views\Users\App_LocalResources\EditData.cshtml.resx" />
+    <Content Include="Areas\Sys_Base\Views\Users\App_LocalResources\ListData.cshtml.resx" />
+    <Content Include="Areas\Sys_Active\Views\Message\App_LocalResources\EditData.cshtml.resx" />
+    <Content Include="Areas\Sys_Active\Views\Message\App_LocalResources\ListData.cshtml.resx" />
+    <Content Include="App_GlobalResources\Res.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Res.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\Sys_Base\Views\Parm\App_LocalResources\ListData.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_Base\Views\Parm\ListData.cshtml" />
+    <None Include="Properties\PublishProfiles\發行至伺服器.pubxml" />
+    <Content Include="Views\Shared\Manage\vucFooter.cshtml" />
+    <Content Include="Views\Shared\Manage\includeScript_FineUpload.cshtml" />
+    <Content Include="Views\Shared\Layout.cshtml" />
+    <Content Include="Views\Shared\sidebar.cshtml" />
+    <Content Include="Views\Index\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_Base\Views\Users\App_LocalResources\Password.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_Base\Views\Users\App_LocalResources\Password.cshtml.zh-CN.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_Base\Views\SystemLogin\App_LocalResources\index.cshtml.zh-CN.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_Active\Views\PageContext\App_LocalResources\EditData.cshtml.resx" />
+    <Content Include="Areas\Sys_Active\Views\PageContext\App_LocalResources\ListData.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_Active\Views\Param\App_LocalResources\EditData.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_Base\Views\Doc\App_LocalResources\ListData.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_Base\Views\PowerUsers\App_LocalResources\EditData.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_League\Views\Message\App_LocalResources\EditData.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_League\Views\Message\App_LocalResources\ListData.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_League\Views\PageContext\App_LocalResources\EditData.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_League\Views\PageContext\App_LocalResources\ListData.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_League\Views\Document\App_LocalResources\EditData.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_League\Views\Document\App_LocalResources\ListData.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_League\Views\ActivePhoto\App_LocalResources\EditData.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_League\Views\ActivePhoto\App_LocalResources\ListData.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_Active\Views\Document\App_LocalResources\EditData.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_Active\Views\Document\App_LocalResources\ListData.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_Active\Views\ActivePhoto\App_LocalResources\EditData.cshtml.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Sys_Active\Views\ActivePhoto\App_LocalResources\ListData.cshtml.resx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2908</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:4430/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

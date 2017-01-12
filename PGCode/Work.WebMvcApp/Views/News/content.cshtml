@@ -1,0 +1,56 @@
+﻿@model ProcCore.Business.Logic.m_Message
+
+@using ProcCore.NetExtension;
+@{
+    ViewBag.Title = "最新消息";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@section css{
+<link rel="stylesheet" type="text/css" href="~/Scripts/fancybox/source/jquery.fancybox.css" media="screen" /> 
+}
+@section JScript{
+<script type="text/javascript" src="~/Scripts/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+    <script type="text/javascript" src="~/Scripts/fancybox/source/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="~/Scripts/fancybox/source/set.js"></script>
+}
+
+<div id="content">
+    <h3><span>最新消息</span>LATEST NEWS</h3>
+    <h4><em>@Model.set_date.ToStandardDate()</em>@Model.title</h4>
+
+    <div id="upload">
+        <!--文字編輯器-->
+        @Html.Raw(Model.context)
+        @{
+            var pics = Html.ImagesAppendInfo("Sys_Active", "Message", Model.id, "Single");
+        }
+        @if (pics.Length > 0)
+        {
+            <p>
+                @foreach (var p in pics)
+                {
+                    <a class="fancybox" href="@p"><img src="@p"></a>
+                }
+            </p>
+        }
+        @{
+            var fs = Html.FilesAppendInfo("Sys_Active", "Message", Model.id, "DocFiles");
+        }
+        <!--檔案上傳-->
+        @if (fs.Length > 0)
+        {
+            <dl class="download">
+                <dt>附件下載</dt>
+                @foreach (var f in fs)
+                { 
+                    <dd><a href="~/_Code/SysUpFiles/Sys_Active.Message/@Model.id/DocFiles/OriginFile/@f">@f</a></dd>
+                }
+            </dl>
+        }
+    </div>
+    <!-- upload //-->
+
+    <a class="btn" href="#header">TOP</a>
+    <a class="btn" href="~/News/list">回列表</a>
+</div>
+<!-- content //-->

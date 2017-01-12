@@ -1,0 +1,35 @@
+﻿@model ProcCore.Business.LogicL.m_ActivePhoto[]
+
+@using ProcCore.Business.LogicL;
+@using ProcCore.NetExtension;
+
+@{
+    ViewBag.Title = "活動剪影";
+    Layout = "~/Areas/tfta/Views/Shared/Layout.cshtml";
+}
+
+<div id="content">
+
+    <h3><span>活動剪影</span>PHOTO</h3>
+
+    <ol class="photo">
+        <!--圖片寬度至少334px，一頁建議6本相簿-->
+
+        @foreach (m_ActivePhoto md in Model)
+        {
+            var p = Html.ImgSrc("Sys_League", "ActivePhoto", md.id, "ListIcon", 334);
+            
+            <li><a href="~/tfta/Albums/content/@md.id">
+                <img src="@p"><em>@md.title</em></a></li>
+        }
+    </ol>
+
+    <ul class="pager">
+        <li class="prev"><a href="#">上一頁</a></li>
+        <li class="current">1</li>
+        <!-- 當前頁 -->
+        <li class="next"><a href="#">下一頁</a></li>
+    </ul>
+
+</div>
+<!-- content //-->

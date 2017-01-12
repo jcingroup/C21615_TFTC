@@ -1,0 +1,43 @@
+﻿@model DotWeb.IndexPageL
+@using ProcCore.NetExtension;
+@{
+    ViewBag.Title = "首頁";
+    Layout = "~/Areas/tfta/Views/Shared/Layout.cshtml";
+}
+
+@section JScript{
+    <script type="text/javascript" src="~/Scripts/nivo-slider/jquery.nivo.slider.js"></script>
+    <!--Banner換圖特效-->
+    <script type="text/javascript">
+        $(window).load(function () {
+            $('#slider').nivoSlider();
+        });
+    </script>
+}
+
+<div class="news">
+    <ul>
+        <!--取標題前11個字，首頁取最新的3則消息，內文最多只取72字-->
+        @foreach (var md in Model.Messages)
+        {
+            <li>
+                <em>@md.set_date.ToString("yyyy/MM/dd")</em>
+                <span>@md.title</span>
+                <i>@md.context.RemovHtmlTag()</i>
+                <!--@md.context.RemovHtmlTag().Left(72)-->
+                <a class="btn" href="~/tfta/News/content/@md.id">READ MORE</a>
+            </li>
+        }
+
+    </ul>
+</div>
+
+<div class="album">
+    <h3>活動剪影</h3>
+    <a class="btn" href="~/tfta/Albums/list">More</a>
+    <!--取最新1本相簿列表圖&相簿標題-->
+    <a class="pic" href="~/tfta/Albums/content/@Model.ActivePhoto.id">
+        <img src="@Html.ImgSrc("Sys_League","ActivePhoto",Model.ActivePhoto.id,"ListIcon",334)">
+        <em>@Model.ActivePhoto.title</em>
+    </a>
+</div>

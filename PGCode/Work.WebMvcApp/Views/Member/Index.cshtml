@@ -1,0 +1,21 @@
+﻿@model ProcCore.Business.Logic.m_PageContext
+@{
+    ViewBag.Title = "中心成員";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@section breadCrumb {
+    <li><a href="~/Member">中心成員</a></li>
+}
+
+<div id="content">
+            
+            <h3><span>中心成員</span>MEMBERS</h3>
+            
+            <div id="upload"><!--編輯器資料-->
+              
+              @Html.Raw(Model.pagecontext)
+              
+            </div><!-- upload //-->
+            
+          </div><!-- content //-->

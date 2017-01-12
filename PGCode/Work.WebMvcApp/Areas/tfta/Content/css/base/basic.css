@@ -1,0 +1,139 @@
+﻿@charset "utf-8";
+
+/*      CSS reset::YUI 3.6.0 (20130312)
+-----------------------------------------------------------------------*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;vertical-align:baseline;vertical-align:bottom\9;}
+body{line-height:1;}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
+ol,ul{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,
+q:before, q:after {content: ''; content: none;}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:text-top}
+sub{vertical-align:text-bottom}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}
+input,textarea,select{*font-size:100%}
+
+a,a:link,a:active,a:visited {
+	text-decoration: none;
+	vertical-align:baseline; vertical-align:middle\9;
+	outline: none; /* ff 消除虛線框*/
+	blur:expression(this.onFocus=this.blur()); /* ie消除虛線框 */
+	}
+a:focus {
+	outline: none;
+	-moz-outline-style: none; /* ff 消除虛線框 */
+	}
+
+
+/*      basic elements
+-----------------------------------------------------------------------*/
+body {
+  color:#666;
+  font: .85em/130% '微軟正黑體', 'Microsoft JhengHei', Georgia, sans-serif;
+  background:url('../../images/bg.gif') repeat-x #F7F7F7;
+  }
+html,
+body {
+	height:100%;
+	text-align:center;
+	}
+a {
+	color: #B3B3B3;
+	line-height:120%;
+	
+	transition: color .5s ease;
+	}
+a:hover {
+	color:#00AFC0;
+	}
+
+h3 { 
+  padding-bottom:10px;
+	color:#D1D1D1;
+	font-weight:bold;
+	font-size:1.1em;
+	background:url('../../images/dot.gif') repeat-x left bottom;
+	}
+h3 span {
+  margin-right:8px;
+  padding-left:20px;
+  color:#EF8F00;
+  font-size:1.5em;
+  background:url('../../images/icon.gif') no-repeat left center;
+  }
+h4 {
+  margin:0 0 8px 21px;
+  color:#00AFC0;
+	font-size:1.2em;
+	font-weight:bold;
+	clear:both;
+	}
+#upload h4 {
+  margin-left:0;
+  }
+h4 em {
+  color:#839FAD;
+  font-size:.8em;
+  }
+h5 {
+  margin:0 0 5px 21px;
+  color:#637B80;
+  font-weight:bold;
+  font-size:1.2em;
+  }
+#upload h5 {
+  margin-left:0;
+  }
+
+p {
+	margin:0 0 8px 21px;
+	line-height:150%;
+	}
+#upload p {
+  margin-left:0;
+  }
+strong {
+	font-weight:bold;
+	}
+
+cite {
+	
+	}
+
+
+/*      Generic Classes
+-----------------------------------------------------------------------*/
+.full { width:100% } /* 寬度100% */
+.float-l,.float-r { margin:0 0 5px 0;}
+.float-l { float:left; margin-right:10px; }
+.float-r { float:right; margin-left:10px; }
+.align-c { text-align:center } /* 水平置中,文字置中 */
+.align-l { text-align:left; } /* 向左對齊 */
+.align-r { text-align:right; } /* 向右對齊 */
+.valign-t { vertical-align:top; } /* 垂直置頂 */
+.valign-m { vertical-align:middle; } /* 垂直置中 */
+.valign-b { vertical-align:bottom; } /* 垂直置底 */
+
+.clear { clear:both } /* 清除浮動 */
+.clearfix:after { clear: both; content: ' '; display: block; font-size: 0; line-height: 0; visibility: hidden; width: 0; height: 0; }
+.clearfix { display: inline-block; }
+
+.msg { color:#D50000 } /* 提示信息 */
+
+.btn {
+  display:inline-block;
+  padding:3px;
+  color:#00AFC0;
+  font-size:.8em;
+  background:#fff;
+  border:1px solid #E6E6E6;
+  }
+.btn:hover {
+  color:#FEC775;
+  }

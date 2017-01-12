@@ -1,0 +1,41 @@
+﻿@model ProcCore.Business.LogicL.m_Message[]
+
+@using ProcCore.Business.LogicL;
+@using ProcCore.NetExtension;
+
+@{
+    ViewBag.Title = ViewBag.KindName; <!--最新消息分類: 活動訊息/課程訊息/研討會訊息-->
+    Layout = "~/Areas/tfta/Views/Shared/Layout.cshtml";
+}
+@section breadCrumb {
+    <li><a href="~/tfta/News/list">最新消息</a></li>
+}
+
+<div id="content">
+
+    <!--最新消息分類: 活動訊息EVENTS/課程訊息COURSES/研討會訊息SEMINAR-->
+    <h3><span>@ViewBag.KindName</span>LATEST NEWS</h3>
+
+    <img class="float-r shadow" src="~/Areas/tfta/Content/images/News/pic1.jpg">
+
+    <ul class="newslist">
+        <!--1頁建議10則-->
+        @foreach (m_Message md in Model)
+        {
+            <li>
+                <em>@md.set_date.ToString("yyyy/MM/dd")</em>
+                <a href="@Url.Content("~/tfta/News/content/" + md.id)">@md.title</a>
+            </li>
+        }
+    </ul>
+
+    <ul class="pager">
+        <li class="prev"><a href="#">上一頁</a></li>
+        <li class="current">1</li>
+        <!-- 當前頁 -->
+        <li><a href="#">2</a></li>
+        <li class="next"><a href="#">下一頁</a></li>
+    </ul>
+
+</div>
+<!-- content //-->

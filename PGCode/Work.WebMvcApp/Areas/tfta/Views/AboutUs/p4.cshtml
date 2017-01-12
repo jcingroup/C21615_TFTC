@@ -1,0 +1,21 @@
+﻿@model ProcCore.Business.LogicL.m_PageContext
+@{
+    ViewBag.Title = "入會方式";
+    Layout = "~/Areas/tfta/Views/Shared/Layout.cshtml";
+}
+
+@section breadCrumb {
+    <li><a href="~/tfta/AboutUs">聯盟簡介</a></li>
+}
+
+<div id="content">
+
+    <h3><span>入會方式</span>APPLY</h3>
+
+    <div id="upload">
+        <!--編輯器資料-->@Html.Raw(Model.pagecontext)
+    </div>
+    <!-- upload //-->
+
+</div>
+<!-- content //-->

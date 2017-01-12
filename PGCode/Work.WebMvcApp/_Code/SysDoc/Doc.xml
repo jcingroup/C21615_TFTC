@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<document>
+  <file>
+    <sort>1</sort>
+    <name>news1.html</name>
+    <!--須和檔名相同-->
+    <memo>最新消息 - 新增</memo>
+  </file>
+  <file>
+    <sort>2</sort>
+    <name>news2.html</name>
+    <memo>最新消息 - 修改</memo>
+  </file>
+  <file>
+    <sort>3</sort>
+    <name>news3.html</name>
+    <memo>最新消息 - 刪除</memo>
+  </file>
+  <file>
+    <sort>4</sort>
+    <name>download1.html</name>
+    <memo>文件下載 - 新增</memo>
+  </file>
+  <file>
+    <sort>5</sort>
+    <name>download2.html</name>
+    <memo>文件下載 - 修改</memo>
+  </file>
+  <file>
+    <sort>6</sort>
+    <name>album1.html</name>
+    <memo>活動剪影 - 新增</memo>
+  </file>
+  <file>
+    <sort>7</sort>
+    <name>album2.html</name>
+    <memo>活動剪影 - 修改</memo>
+  </file>
+  <file>
+    <sort>8</sort>
+    <name>album3.html</name>
+    <memo>活動剪影 - 刪除</memo>
+  </file>
+  <file>
+    <sort>9</sort>
+    <name>web1.html</name>
+    <memo>網頁內容編輯</memo>
+  </file>
+
+</document>

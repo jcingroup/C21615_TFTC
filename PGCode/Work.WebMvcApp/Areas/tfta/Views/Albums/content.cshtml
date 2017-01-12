@@ -1,0 +1,69 @@
+﻿@model ProcCore.Business.LogicL.m_ActivePhoto
+
+@using ProcCore.Business.LogicL;
+@using ProcCore.NetExtension;
+
+@{
+    ViewBag.Title = "活動剪影";
+    Layout = "~/Areas/tfta/Views/Shared/Layout.cshtml";
+}
+@section css{
+    <link rel="stylesheet" type="text/css" href="~/Scripts/fancybox/source/jquery.fancybox.css" media="screen" />
+}
+@section JScript{
+    <script type="text/javascript" src="~/Scripts/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+    <script type="text/javascript" src="~/Scripts/fancybox/source/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="~/Scripts/fancybox/source/set.js"></script>
+    <script>
+        /*masonry瀑布流*/
+        $myContainer = $('.half');
+        $myContainer.masonry({
+            itemSelector: 'a',
+            isInitLayout: false //避免第一次讀取時圖片重疊
+        });
+        $(window).load(function () { $myContainer.masonry(); });
+   </script>
+}
+
+<div id="content">
+
+    <h3><span>活動剪影</span>PHOTO</h3>
+
+    <h4>@Model.title</h4>
+
+    <div id="upload">
+
+        <!--圖片上傳單欄-->
+        <p class="full">
+            @{
+                var ps = Html.ImagesAppendInfo("Sys_League", "ActivePhoto", Model.id, "Single", 800);
+            }
+
+            @foreach (var p in ps)
+            {
+                <a class="fancybox" href="@p">
+                    <img src="@p">
+                </a>
+            }
+        </p>
+
+        <!--圖片上傳雙欄-->
+        <p class="half">
+            @{
+                var pd = Html.ImagesAppendInfo("Sys_League", "ActivePhoto", Model.id, "Double", 600);
+            }
+
+            @foreach (var p in pd)
+            {
+                <a class="fancybox" href="@p">
+                    <img src="@p">
+                </a>
+            }
+        </p>
+
+    </div>
+    <a class="btn" href="#header">TOP</a>
+    <a class="btn" href="~/tfta/Albums/list">回列表</a>
+
+</div>

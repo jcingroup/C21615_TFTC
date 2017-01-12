@@ -1,0 +1,53 @@
+﻿@{
+    String c = ViewContext.RouteData.Values["controller"].ToString();
+    String a = ViewContext.RouteData.Values["action"].ToString();
+    String r = Request.QueryString["kind"];
+}
+
+<div id="sidebar">
+
+    @if (c == "AboutUs")
+    {
+        <h3>聯盟簡介</h3>
+        <ul>
+            <li class="tab1"><a href="~/tfta/AboutUs/index">宗旨</a></li>
+            <li class="tab2"><a href="~/tfta/AboutUs/p2">聯盟緣起</a></li>
+            <li class="tab3"><a href="~/tfta/AboutUs/p3">核心成員</a></li>
+            <li class="tab4"><a href="~/tfta/AboutUs/p4">入會方式</a></li>
+            <li class="tab5"><a href="~/tfta/AboutUs/p5">聯盟成員</a></li>
+        </ul>
+    }
+
+    @if (c == "News")
+    {
+        <h3>最新消息</h3>
+        <ul>
+            <li @Html.Raw(r == "Active" ? "class=\"current\"" : "")><a href="~/tfta/News/list?kind=Active">活動訊息</a></li>
+            <!--當前分類-->
+            <li @Html.Raw(r == "Class" ? "class=\"current\"" : "")><a href="~/tfta/News/list?kind=Class">課程訊息</a></li>
+            <li @Html.Raw(r == "Research" ? "class=\"current\"" : "")><a href="~/tfta/News/list?kind=Research">研討會訊息</a></li>
+        </ul>
+    }
+
+    @if (c == "Equip")
+    {
+        <h3>產學服務</h3>
+        <ul>
+            <li class="tab1"><a href="~/tfta/Equip/">儀器設備</a></li>
+            <li class="tab2"><a href="~/Areas/tfta/Content/images/Equip/2013中心收費標準.pdf" target="new">委託服務與收費</a></li>
+        </ul>
+    }
+
+    <h3 class="contact"><a href="~/tfta/ContactUs/">聯絡我們</a></h3>
+
+    <h3 class="link">網網相連</h3>
+    <ul class="link">
+        <li><a href="http://www.moe.com.tw/" target="new">耀穎光電股份有限公司</a></li>
+        <li><a href="http://www.prolightopto.com/" target="new">葳天科技股份有限公司</a></li>
+        <li><a href="#">匯穎科技股份有限公司</a></li>
+        <li><a href="http://www.hpbint.com/index.php" target="new">合盈光電科技股份有限公司</a></li>
+        <li><a href="http://www.lofsolar.com/" target="new">樂福太陽能股份有限公司</a></li>
+    </ul>
+
+</div>
+<!-- sidebar //-->

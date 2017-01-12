@@ -1,0 +1,32 @@
+﻿@model ProcCore.Business.Logic.m_Message[]
+
+@using ProcCore.Business.Logic;
+@using ProcCore.NetExtension;
+@{
+    ViewBag.Title = "最新消息";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<div id="content">
+    <h3><span>最新消息</span>LATEST NEWS</h3>
+    <img class="float-r shadow" src="~/Content/images/News/pic1.jpg">
+    <ul class="newslist">
+        <!--1頁建議7則-->
+        @foreach (m_Message md in Model)
+        {
+            <li>
+                <em>@md.set_date.ToString("yyyy/MM/dd")</em>
+                <a href="@Url.Content("~/News/content/" + md.id)">@md.title</a>
+            </li>
+        }
+    </ul>
+
+    <ul class="pager">
+        <li class="prev"><a href="#">上一頁</a></li>
+        <li class="current">1</li>
+        <!-- 當前頁 -->
+        <li><a href="#">2</a></li>
+        <li class="next"><a href="#">下一頁</a></li>
+    </ul>
+
+</div>
+<!-- content //-->

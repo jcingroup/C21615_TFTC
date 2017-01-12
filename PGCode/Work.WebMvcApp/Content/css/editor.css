@@ -1,0 +1,143 @@
+@import "base/basic.css";
+@charset "utf-8";
+
+/* 編輯器reset */
+
+body {
+    margin: 10px 0;
+    text-align: left;
+    background: none;
+}
+
+em {
+    font-style: italic;
+}
+
+ol,
+ul {
+    margin: -3px 0 8px 21px;
+}
+
+li {
+    padding: 3px 0 3px 12px;
+    background: url('../images/arrow2.gif') no-repeat left 6px;
+}
+
+ol {
+    list-style: decimal inside;
+}
+
+tr {
+    border-bottom: 1px solid #eee;
+}
+
+.reset tr {
+    border: none;
+}
+
+td {
+    padding-top: 10px;
+}
+
+
+/*圖片上傳*/
+
+img {
+    max-width: 100%;
+}
+
+.half {
+    margin-left: -2%;
+    overflow: hidden;
+}
+
+.half img {
+    float: left;
+    max-width: 48%;
+    margin-left: 2%;
+}
+
+
+/* Member */
+
+table.member {
+    margin: -10px 0 0 0;
+    text-align: left;
+}
+
+.member tr {
+    background: url('../images/dot4.gif') repeat-x left bottom;
+}
+
+.member th {
+    width: 100px;
+    height: 107px;
+    padding: 10px 0;
+}
+
+.member.small th {
+    width: 70px;
+    height: 80px;
+    vertical-align: top;
+}
+
+.member th img {
+    max-width: 83px;
+    max-height: 103px;
+    border: 2px solid #ddd;
+}
+
+.member.small th img {
+    max-width: 55px;
+    max-height: 68px;
+}
+
+.member td {
+    width: 600px;
+    padding: 10px 0;
+    vertical-align: top;
+}
+
+.member.small td {
+    width: 152px;
+    padding: 10px 5px 10px 0;
+}
+
+.member td h4 {
+    margin-bottom: 5px;
+}
+
+.member td a.mail {
+    margin-left: 5px;
+}
+
+.member td em {
+    display: block;
+    margin: 0 0 5px 0;
+    color: #999;
+    font-style: normal;
+}
+
+
+/* Equip */
+
+table.equip tr {
+    border: none;
+}
+
+table.equip th {
+    width: 220px;
+    height: 142px;
+    padding: 5px 5px 0 5px;
+    background: #fff;
+    border-left: 5px solid #f7f7f7;
+    border-right: 5px solid #f7f7f7;
+}
+
+table.equip td {
+    padding: 5px;
+    background: #fff;
+    border-left: 5px solid #f7f7f7;
+    border-right: 5px solid #f7f7f7;
+    border-bottom: 10px solid #f7f7f7;
+}

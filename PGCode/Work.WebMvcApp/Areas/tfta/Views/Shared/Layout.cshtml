@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<!-- saved from url=(0014)about:internet -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="中央大學薄膜技術聯盟" />
+    <meta name="description" content="中央大學薄膜技術聯盟" />
+    <title>::中央大學薄膜技術聯盟::@ViewBag.Title</title>
+    @if (ViewBag.IsFirstPage)
+    { <link href="~/Areas/tfta/Content/css/index.css" rel="stylesheet" type="text/css"> }
+    else
+    { <link href="~/Areas/tfta/Content/css/page.css" rel="stylesheet" type="text/css"> }
+    @RenderSection("css", false)
+</head>
+
+<body class="@ViewBag.BodyClass">
+    <div id="container">
+
+        <div id="header">
+
+            <h1 id="logo"><a href="~/tfta/Index" title="回首頁">中央大學薄膜技術聯盟</a></h1>
+            <script src="~/Scripts/swfobject.js" type="text/javascript"></script>
+            <script type="text/javascript">
+                    // <![CDATA[
+                    var so = new SWFObject("@Url.Content("~/Areas/tfta/Content/images/logo.swf")", "STYLE ARENA", "300px", "140px", "8", "transparent");
+                    so.addParam("quality", "high");
+                    so.addParam("salign", "");
+                    so.addParam("scale", "noscale");
+                    so.addParam("wmode", "transparent");
+                    so.addParam("allowScriptAccess", "always");
+                    so.addParam("base", ".");
+                    so.write("logo");
+                    // ]]>
+            </script>
+            
+            <ul class="nav">
+              <li><a href="~/tfta/Index">HOME</a></li>
+              <li><a href="mailto:tftc@cc.ncu.edu.tw">E-MAIL</a></li>
+              <li class="end"><a href="~/Index">薄膜技術中心</a></li>
+            </ul>
+
+            <ul class="menu">
+              <li class="nav1"><a href="~/tfta/News/list"><em>NEWS</em>最新消息</a></li>
+              <li class="nav2"><a href="~/tfta/AboutUs"><em>ABOUT US</em>聯盟簡介</a></li>
+              <li class="nav3"><a href="~/tfta/Download"><em>DOWNLOAD</em>文件下載</a></li>
+              <li class="nav4"><a href="~/tfta/Albums/list"><em>PHOTO</em>活動剪影</a></li>
+              <li class="nav5"><a href="~/tfta/Equip"><em>SERVICE</em>產學服務</a></li>
+            </ul>
+            
+            @if (ViewBag.IsFirstPage)
+            {
+                <div id="slider">
+                <img src="~/Areas/tfta/Content/images/Index/banner1.jpg" data-thumb="@Url.Content("~/Areas/tfta/Content/images/Index/banner1.jpg")">
+                <img src="~/Areas/tfta/Content/images/Index/banner2.jpg" data-thumb="@Url.Content("~/Areas/tfta/Content/images/Index/banner2.jpg")">
+            </div>
+            }
+            else
+            { }
+
+        </div>
+        <!-- header //-->
+
+        <div id="main">
+
+            @if (ViewBag.IsFirstPage)
+            {
+            }
+            else
+            { 
+                <ul class="breadCrumb">
+                    <li class="s"><a href="~/tfta/Index">HOME</a></li>
+                    @RenderSection("breadCrumb", false)
+                    <li>@ViewBag.Title</li>
+                </ul>
+
+                @Html.Partial("sidebar")
+            }
+
+            @RenderBody()
+
+        </div>
+        <!-- main //-->
+
+    </div>
+    <!--container //-->
+
+    <div id="footer">
+        <div class="wrap">
+
+            <div class="grid">
+                <h4>薄膜技術中心</h4>
+                <ul class="float-l">
+                    <li><a href="~/News/list">最新消息<em>Lastst News</em></a></li>
+                    <li><a href="~/AboutUs">關於中心<em>About Us</em></a></li>
+                    <li><a href="~/Member">中心成員<em>Members</em></a></li>
+                    <li><a href="~/Albums/list">活動剪影<em>Albums</em></a></li>
+                    <li><a href="~/ContactUs">聯絡我們<em>Contact Us</em></a></li>
+                </ul>
+                <ul class="float-r">
+                    <li><a href="~/Tech">核心技術<em>Technology</em></a></li>
+                    <li><a href="~/Equip">儀器設備<em>Equipment</em></a></li>
+                    <li><a href="~/Download">文件下載<em>Download</em></a></li>
+                </ul>
+            </div>
+
+            <div class="grid">
+                <h4>薄膜技術聯盟</h4>
+                <ul>
+                    <li><a href="~/tfta/News/list">最新消息<em>Lastst News</em></a></li>
+                    <li><a href="~/tfta/AboutUs/">聯盟簡介<em>About Us</em></a></li>
+                    <li><a href="~/tfta/Download/">文件下載<em>Download</em></a></li>
+                    <li><a href="~/tfta/Albums/list">活動剪影<em>Albums</em></a></li>
+                    <li><a href="~/tfta/ContactUs/">聯絡我們<em>Contact Us</em></a></li>
+                </ul>
+            </div>
+
+            <div class="grid">
+    <h4>INFORMATION</h4>
+    <p>
+      <em>32001 No.300, Zhongda Rd.,<br>Zhongli City, Taoyuan County 320, Taiwan (R.O.C.)</em>
+      320 桃園縣中壢市中大路300號<br>Phone: +886-3-4227151 #65010<br>E-mail: <a href="mailto:mcli@dop.ncu.edu.tw">mcli@dop.ncu.edu.tw</a>
+    </p>
+  </div>
+      
+  <ul class="nav">
+    <li class="fb"><a href="">facebook</a></li>
+    <li><a href="">twitter</a></li>
+  </ul>
+      
+  <p class="copyright">TFTA &copy; 2013. All Rights Reserved.</p>
+
+        </div>
+    </div>
+    <!-- footer //-->
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <!--jQuery-->
+    <script type="text/javascript" src="~/Scripts/scroll.js"></script>
+    @RenderSection("JScript", false)
+
+</body>
+</html>

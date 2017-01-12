@@ -1,0 +1,34 @@
+﻿@model ProcCore.Business.LogicL.m_Document[]
+@using ProcCore.NetExtension;
+@{
+    ViewBag.Title = "文件下載";
+    Layout = "~/Areas/tfta/Views/Shared/Layout.cshtml";
+}
+
+<div id="content">
+
+    <h3><span>文件下載</span>DOWNLOAD</h3>
+    <img class="float-r shadow" src="~/Content/images/Download/pic1.jpg">
+
+    <ul class="file">
+        <!--1頁建議10則-->
+
+        @foreach (var md in Model)
+        {
+            var fs = Html.FilesAppendInfo("Sys_League", "Document", md.id, "DocFiles");
+            if (fs.Length > 0)
+            {
+            <li><a href="@Url.Content("~/_Code/SysUpFiles/Sys_League.Document/" + @md.id + "/DocFiles/OriginFile/" + fs.FirstOrDefault())" >@md.title</a></li>
+            }
+        }
+    </ul>
+
+    <ul class="pager">
+        <li class="prev"><a href="#">上一頁</a></li>
+        <li class="current">1</li>
+        <!-- 當前頁 -->
+        <li class="next"><a href="#">下一頁</a></li>
+    </ul>
+
+</div>
+<!-- content //-->

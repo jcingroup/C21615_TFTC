@@ -1,0 +1,89 @@
+﻿@{
+    String c = ViewContext.RouteData.Values["controller"].ToString();
+    String a = ViewContext.RouteData.Values["action"].ToString();
+}
+
+<div id="sidebar">
+
+    @if (c == "AboutUs")
+    {
+        <h3>關於中心</h3>
+        <ul>
+            <li class="tab1"><a href="~/AboutUs/index">中心簡介</a></li>
+            <li class="tab2"><a href="~/AboutUs/p2">中心理念</a></li>
+            <li class="tab3"><a href="~/AboutUs/p3">中心主任</a></li>
+        </ul>
+
+        <h3>關於聯盟</h3>
+        <ul>
+            <li class="tab4"><a href="~/AboutUs/tfta">聯盟簡介</a></li>
+            <li class="tab5"><a href="~/AboutUs/tfta2">聯盟理念</a></li>
+            <li class="tab6"><a href="~/AboutUs/tfta3">聯盟成員</a></li>
+        </ul>
+    }
+
+    @if (c == "Member")
+    {
+        <h3>中心成員</h3>
+        <ul>
+            <li class="tab1"><a href="~/Member/index">中心成員</a></li>
+            <li class="tab2"><a href="~/Member/p2">博士生</a></li>
+            <li class="tab3"><a href="~/Member/p3">碩士生</a></li>
+        </ul>
+    }
+
+    @if (c == "News")
+    {
+    }
+
+    @if (c == "Tech")
+    {
+    }
+
+    @if (c == "Equip")
+    {
+    }
+
+    @if (c == "ContactUs")
+    {
+    }
+
+    @if (c == "Download")
+    {
+    }
+
+    @if (c == "Albums")
+    {
+    }
+
+    <a href="~/ContactUs" class="contact">聯絡我們</a>
+    @* <h3 class="link">網網相連</h3>
+    <ul class="link">
+        <li>
+            <a href="http://www.ncu.edu.tw/" target="new" title="中央大學">
+                <img src="~/Content/images/link/ncu.jpg" alt="中央大學">
+            </a>
+        </li>
+        <li>
+            <a href="http://tftc.ncu.edu.tw/tfta/" target="new" title="薄膜技術聯盟">
+                <img src="~/Content/images/link/tfta.jpg" alt="薄膜技術聯盟">
+            </a>
+        </li>
+        <li>
+            <a href="http://web1.most.gov.tw/mp.aspx" target="new" title="科技部">
+                <img src="~/Content/images/link/most.jpg" alt="科技部">
+            </a>
+        </li>
+        <li>
+            <a href="http://www.pida.org.tw/" target="new" title="光電科技工業協進會">
+                <img src="~/Content/images/link/pida.jpg" alt="光電科技工業協進會">
+            </a>
+        </li>
+        <li>
+            <a href="http://www.ncu.edu.tw/~tftc/oes/" target="new" title="中華民國光電學會">
+                <img src="~/Content/images/link/tps.jpg" alt="中華民國光電學會">
+            </a>
+        </li>
+    </ul> *@
+
+</div><!-- sidebar //-->

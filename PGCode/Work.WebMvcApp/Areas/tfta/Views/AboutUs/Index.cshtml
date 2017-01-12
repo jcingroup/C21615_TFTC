@@ -1,0 +1,21 @@
+﻿@model ProcCore.Business.LogicL.m_PageContext
+@{
+    ViewBag.Title = "宗旨";
+    Layout = "~/Areas/tfta/Views/Shared/Layout.cshtml";
+}
+
+@section breadCrumb {
+    <li><a href="~/tfta/AboutUs">聯盟簡介</a></li>
+}
+
+<div id="content">
+
+    <h3><span>宗旨</span>PRINCIPLE</h3>
+
+    <div id="upload">
+        <!--編輯器資料-->@Html.Raw(Model.pagecontext)
+    </div>
+    <!-- upload //-->
+
+</div>
+<!-- content //-->
