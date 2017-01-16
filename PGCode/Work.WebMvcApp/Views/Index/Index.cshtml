@@ -73,7 +73,7 @@
     <h3><span>活動剪影</span></h3>
     <a class="more" href="~/Albums/list">More</a>
 
-    @* 取最新1本相簿列表圖&相簿標題 *@
+    @* 取最新1本相簿列表圖&相簿標題(預覽) *@
     <figure>
         <a href=""></a>
         <img src="~/Content/images/Albums/pic1.jpg">
@@ -86,6 +86,13 @@
         <a href="~/Albums/content/@Model.Albums.id">
             <img src="@ps"></a>
         <em><a href="~/Albums/content/@Model.Albums.id">@Model.Albums.title</a></em>
+
+        @* 取最新1本相簿列表圖&相簿標題(實際用)
+        <figure>
+            <a href="~/Albums/content/@Model.Albums.id"></a>
+            <img src="@ps">
+            <figcaption>@Model.Albums.title</figcaption>
+        </figure> *@
     }
 
 </div>
