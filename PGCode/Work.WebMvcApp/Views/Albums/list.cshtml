@@ -14,7 +14,6 @@
 
     <ol class="photo">
         @* 圖片寬度至少334px，一頁建議6本相簿 *@
-        @* 合併聯盟資料 *@
         @foreach (m_ActivePhoto md in Model)
         {
             var p = Html.ImgSrc("Sys_Active", "ActivePhoto", md.id, "ListIcon", 334);

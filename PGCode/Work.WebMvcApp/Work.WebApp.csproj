@@ -550,6 +550,8 @@
     <Content Include="Views\AboutUs\tfta.cshtml" />
     <Content Include="Views\AboutUs\tfta2.cshtml" />
     <Content Include="Views\AboutUs\tfta3.cshtml" />
+    <Content Include="Views\AboutUs\tfta4.cshtml" />
+    <Content Include="Views\AboutUs\tfta5.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_GlobalResources\App_Data\" />
