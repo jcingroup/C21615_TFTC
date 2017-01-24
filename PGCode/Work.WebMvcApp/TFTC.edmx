@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="C21A0_TFTCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="網頁L">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="kid" Type="int" />
+          <Property Name="網頁名稱" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="開啟" Type="bit" Nullable="false" />
+          <Property Name="時間" Type="datetime" Nullable="false" />
+          <Property Name="排序" Type="int" Nullable="false" />
+          <Property Name="網頁內容" Type="ntext" />
+          <Property Name="_隱藏" Type="bit" />
+          <Property Name="_新增人員" Type="int" />
+          <Property Name="_新增單位" Type="int" />
+          <Property Name="_新增日期" Type="datetime" />
+          <Property Name="_修改人員" Type="int" />
+          <Property Name="_修改單位" Type="int" />
+          <Property Name="_修改日期" Type="datetime" />
+          <Property Name="_語系" Type="char" MaxLength="5" />
+        </EntityType>
+        <EntityContainer Name="C21A0_TFTCModelStoreContainer">
+          <EntitySet Name="網頁L" EntityType="Self.網頁L" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="C21A0_TFTCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="網頁L">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="kid" Type="Int32" />
+          <Property Name="網頁名稱" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="開啟" Type="Boolean" Nullable="false" />
+          <Property Name="時間" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="排序" Type="Int32" Nullable="false" />
+          <Property Name="網頁內容" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="C_隱藏" Type="Boolean" />
+          <Property Name="C_新增人員" Type="Int32" />
+          <Property Name="C_新增單位" Type="Int32" />
+          <Property Name="C_新增日期" Type="DateTime" Precision="3" />
+          <Property Name="C_修改人員" Type="Int32" />
+          <Property Name="C_修改單位" Type="Int32" />
+          <Property Name="C_修改日期" Type="DateTime" Precision="3" />
+          <Property Name="C_語系" Type="String" MaxLength="5" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="C21A0_TFTCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="網頁L" EntityType="Self.網頁L" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="C21A0_TFTCModelStoreContainer" CdmEntityContainer="C21A0_TFTCEntities">
+          <EntitySetMapping Name="網頁L">
+            <EntityTypeMapping TypeName="C21A0_TFTCModel.網頁L">
+              <MappingFragment StoreEntitySet="網頁L">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="kid" ColumnName="kid" />
+                <ScalarProperty Name="網頁名稱" ColumnName="網頁名稱" />
+                <ScalarProperty Name="開啟" ColumnName="開啟" />
+                <ScalarProperty Name="時間" ColumnName="時間" />
+                <ScalarProperty Name="排序" ColumnName="排序" />
+                <ScalarProperty Name="網頁內容" ColumnName="網頁內容" />
+                <ScalarProperty Name="C_隱藏" ColumnName="_隱藏" />
+                <ScalarProperty Name="C_新增人員" ColumnName="_新增人員" />
+                <ScalarProperty Name="C_新增單位" ColumnName="_新增單位" />
+                <ScalarProperty Name="C_新增日期" ColumnName="_新增日期" />
+                <ScalarProperty Name="C_修改人員" ColumnName="_修改人員" />
+                <ScalarProperty Name="C_修改單位" ColumnName="_修改單位" />
+                <ScalarProperty Name="C_修改日期" ColumnName="_修改日期" />
+                <ScalarProperty Name="C_語系" ColumnName="_語系" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

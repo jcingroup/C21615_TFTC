@@ -20,8 +20,10 @@ namespace DotWeb.WebApp.Controllers
         {
             a_PageContext ac_PageContext = new a_PageContext() { Connection = getSQLConnection(), logPlamInfo = this.plamInfo };
             var r1 = ac_PageContext.GetDataMaster(100, 0).SearchData;
-
             ViewBag.BodyClass = "AboutUs p1";
+
+
+
             return View(r1);
         }
 
@@ -45,23 +47,34 @@ namespace DotWeb.WebApp.Controllers
 
         public ActionResult tfta()
         {
-            return View();
+            C21A0_TFTCEntities db = new C21A0_TFTCEntities();
+            var md = db.網頁L.Where(x => x.id == 100).FirstOrDefault();
+
+            return View(md);
         }
         public ActionResult tfta2()
         {
-            return View();
+            C21A0_TFTCEntities db = new C21A0_TFTCEntities();
+            var md = db.網頁L.Where(x => x.id == 110).FirstOrDefault();
+            return View(md);
         }
         public ActionResult tfta3()
         {
-            return View();
+            C21A0_TFTCEntities db = new C21A0_TFTCEntities();
+            var md = db.網頁L.Where(x => x.id == 120).FirstOrDefault();
+            return View(md);
         }
         public ActionResult tfta4()
         {
-            return View();
+            C21A0_TFTCEntities db = new C21A0_TFTCEntities();
+            var md = db.網頁L.Where(x => x.id == 130).FirstOrDefault();
+            return View(md);
         }
         public ActionResult tfta5()
         {
-            return View();
+            C21A0_TFTCEntities db = new C21A0_TFTCEntities();
+            var md = db.網頁L.Where(x => x.id == 140).FirstOrDefault();
+            return View(md);
         }
     }
 }
