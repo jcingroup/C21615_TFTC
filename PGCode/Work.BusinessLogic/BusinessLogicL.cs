@@ -6160,7 +6160,7 @@ namespace ProcCore.Business.LogicL
                 #region Select Data 區段 By 條件
                 #region 設定輸出至Grid欄位
                 TablePack<PageContext> dataWork = new TablePack<PageContext>(Connection) { LoginUserID = this.logPlamInfo.UserId, LoginUnitID = this.logPlamInfo.UnitId };
-                dataWork.SelectFields(x => new { x.id, x.pagename, x.setdate, x.isopen, x.sort });
+                dataWork.SelectFields(x => new { x.id, x.pagename, x.setdate, x.isopen, x.sort ,x._隱藏});
                 #endregion
 
                 #region 設定Where條件
@@ -6169,6 +6169,8 @@ namespace ProcCore.Business.LogicL
 
                 if (qr.s_pagename != null)
                     dataWork.WhereFields(x => x.pagename, qr.s_pagename, WhereCompareType.Like);
+
+                dataWork.WhereFields(x => x._隱藏, false);//隱藏沒使用的資料
 
                 dataWork.WhereLang(); //使用語系條件
                 #endregion
