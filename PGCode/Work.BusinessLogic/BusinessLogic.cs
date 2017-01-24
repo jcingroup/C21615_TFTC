@@ -55,7 +55,7 @@ namespace ProcCore.Business.Logic
             dataWork.TopLimit = 10;
             dataWork.SelectFields(x => x.zip);
             dataWork.SelectFields(x => x.data);
-            dataWork.WhereFields(x => x.data,key,WhereCompareType.LikeRight);
+            dataWork.WhereFields(x => x.data, key, WhereCompareType.LikeRight);
             r.SearchData = dataWork.DataByAdapter<m__Adr_zh_TW>();
             return r;
         }
@@ -486,7 +486,7 @@ namespace ProcCore.Business.Logic
         {
             #region 設定權限核心資料
 
-            this.Powers = new Power[] { 
+            this.Powers = new Power[] {
                 new Power { Id = 1, name = PowersName.Controller, ManagementIntSerial = System.Math.Pow(2, 0).CInt() },
                 new Power { Id = 2, name = PowersName.Manage, ManagementIntSerial = System.Math.Pow(2, 1).CInt() },
                 new Power { Id = 3, name = PowersName.List, ManagementIntSerial = System.Math.Pow(2, 2).CInt() },
@@ -568,7 +568,7 @@ namespace ProcCore.Business.Logic
             {
                 String sql = "Select PowerID From _PowerUsers Where UserID=@UserID and ProgID=@ProgID UNION ALL Select PowerID From _PowerUnit Where UnitID=@UnitID and ProgID=@ProgID";
 
-                Params("@UserID", UserId);        
+                Params("@UserID", UserId);
                 Params("@UnitID", md.unit);
                 Params("@ProgID", ProgId);
 
@@ -928,7 +928,7 @@ namespace ProcCore.Business.Logic
 
             dataWork.SelectFields(x => x.id);
             dataWork.SelectFields(x => x.name);
-            dataWork.WhereFields(x => x.id,1, WhereCompareType.UnEquel);
+            dataWork.WhereFields(x => x.id, 1, WhereCompareType.UnEquel);
             dataWork.OrderByFields(x => x.id, OrderByType.DESC);
 
             DataTable dt = dataWork.DataByAdapter();
@@ -1958,7 +1958,7 @@ namespace ProcCore.Business.Logic
         public override RunQueryPackage<m_Unit> SearchMaster(q_Unit qr, int AccountID)
         {
             #region 全域變數宣告
-            RunQueryPackage<m_Unit> r = new RunQueryPackage<m_Unit>() ;
+            RunQueryPackage<m_Unit> r = new RunQueryPackage<m_Unit>();
             #endregion
 
             try
@@ -5474,7 +5474,7 @@ namespace ProcCore.Business.Logic
                 dataWork.SetDataRowValue(x => x.set_date, md.set_date);
                 //dataWork.SetDataRowValue(x => x.context, md.context);
                 dataWork.SetDataRowValue(x => x.isopen, md.isopen);
-                
+
                 dataWork.SetDataRowValue(x => x.sort, md.sort);
 
                 dataWork.UpdateFieldsInfo(UpdateFieldsInfoType.Insert); //進行更新時 需同時更新系統欄位 _新增人員，_新增日期
@@ -6241,7 +6241,7 @@ namespace ProcCore.Business.Logic
                 #region Select Data 區段 By 條件
                 #region 設定輸出至Grid欄位
                 TablePack<PageContext> dataWork = new TablePack<PageContext>(Connection) { LoginUserID = this.logPlamInfo.UserId, LoginUnitID = this.logPlamInfo.UnitId };
-                dataWork.SelectFields(x => new { x.id, x.pagename, x.setdate, x.isopen, x.sort });
+                dataWork.SelectFields(x => new { x.id, x.pagename, x.setdate, x.isopen, x.sort, x._隱藏 });
                 #endregion
 
                 #region 設定Where條件
@@ -6250,6 +6250,8 @@ namespace ProcCore.Business.Logic
 
                 if (qr.s_pagename != null)
                     dataWork.WhereFields(x => x.pagename, qr.s_pagename, WhereCompareType.Like);
+                
+                dataWork.WhereFields(x => x._隱藏, false);//隱藏沒使用的資料
 
                 dataWork.WhereLang(); //使用語系條件
                 #endregion
