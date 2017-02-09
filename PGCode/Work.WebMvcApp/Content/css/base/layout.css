@@ -34,7 +34,8 @@ body > #container {
 #main {
     text-align: left;
     overflow: hidden;
-    padding: 15px 0 249px 0;
+    padding-top: 15px;
+    padding-bottom: 250px;
     background: url(../../images/bg2.jpg) no-repeat center top;
 }
 

@@ -9,16 +9,6 @@
     CultureInfo c = new CultureInfo("en-US");
 }
 
-@section JScript {
-    <script type="text/javascript" src="~/Scripts/nivo-slider/jquery.nivo.slider.js"></script>
-    <!--Banner換圖特效-->
-    <script type="text/javascript">
-        $(window).load(function () {
-            $('#slider').nivoSlider();
-        });
-    </script>
-}
-
 <div class="news">
     <h3><span>最新消息</span></h3>
     <a class="more" href="~/News/list">More</a>
@@ -73,26 +63,20 @@
     <h3><span>活動剪影</span></h3>
     <a class="more" href="~/Albums/list">More</a>
 
-    @* 取最新1本相簿列表圖&相簿標題(預覽) *@
-    <figure>
-        <a href=""></a>
-        <img src="~/Content/images/Albums/pic1.jpg">
-        <figcaption>活動剪影標題</figcaption>
-    </figure>
-
     @if (Model.Albums != null)
     {
         var ps = Html.ImagesAppendInfo("Sys_Active", "ActivePhoto", Model.Albums.id, "ListIcon", 334).FirstOrDefault();
+        @* 舊版
         <a href="~/Albums/content/@Model.Albums.id">
             <img src="@ps"></a>
-        <em><a href="~/Albums/content/@Model.Albums.id">@Model.Albums.title</a></em>
+        <em><a href="~/Albums/content/@Model.Albums.id">@Model.Albums.title</a></em> *@
 
-        @* 取最新1本相簿列表圖&相簿標題(實際用)
+        @* 新版 *@
         <figure>
             <a href="~/Albums/content/@Model.Albums.id"></a>
             <img src="@ps">
             <figcaption>@Model.Albums.title</figcaption>
-        </figure> *@
+        </figure>
     }
 
 </div>

@@ -25,43 +25,41 @@
     </script>
 }
 
-<div id="content">
 
-    <h3><span>活動剪影</span>ALBUMS</h3>
+<h3><span>活動剪影</span>ALBUMS</h3>
 
-    <h4>@Model.title</h4>
+<h4>@Model.title</h4>
 
-    <div id="upload">
+<div id="upload">
 
-        <!--圖片上傳單欄-->
-        <p class="full">
-            @{
-                var ps = Html.ImagesAppendInfo("Sys_Active", "ActivePhoto", Model.id, "Single", 800);
-            }
+    <!--圖片上傳單欄-->
+    <p class="full">
+        @{
+            var ps = Html.ImagesAppendInfo("Sys_Active", "ActivePhoto", Model.id, "Single", 800);
+        }
 
-            @foreach (var p in ps)
-            {
-                <a class="fancybox" href="@p">
-                    <img src="@p">
-                </a>
-            }
-        </p>
+        @foreach (var p in ps)
+        {
+            <a class="fancybox" href="@p">
+                <img src="@p">
+            </a>
+        }
+    </p>
 
-        <!--圖片上傳雙欄-->
-        <p class="half">
-            @{
-                var pd = Html.ImagesAppendInfo("Sys_Active", "ActivePhoto", Model.id, "Double", 600);
-            }
+    <!--圖片上傳雙欄-->
+    <p class="half">
+        @{
+            var pd = Html.ImagesAppendInfo("Sys_Active", "ActivePhoto", Model.id, "Double", 600);
+        }
 
-            @foreach (var p in pd)
-            {
-                <a class="fancybox" href="@p">
-                    <img src="@p">
-                </a>
-            }
-        </p>
+        @foreach (var p in pd)
+        {
+            <a class="fancybox" href="@p">
+                <img src="@p">
+            </a>
+        }
+    </p>
 
-    </div>
-    <a class="btn" href="#header">TOP</a>
-    <a class="btn" href="~/Albums/list">回列表</a>
 </div>
+<a class="btn" href="#header">TOP</a>
+<a class="btn" href="~/Albums/list">回列表</a>

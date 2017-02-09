@@ -21,10 +21,10 @@
 .Equip #sidebar h3,
 .ContactUs #sidebar h3,
 .Download #sidebar h3,
-.Albums #sidebar h3, */
+.Albums #sidebar h3,
 .Member #sidebar h3 {
-    background-position: 0 -60px;
-}
+    background-image: none;
+} */
 
 .AboutUs #sidebar h3:first-of-type {
     background-image: url('../images/AboutUs/icon_center.gif');
@@ -41,6 +41,14 @@
     display: block;
     padding: 7px 0 7px 50px;
     font-weight: bold;
+}
+
+.Member #sidebar h3 {
+    background-image: none;
+    padding-left: 15px;
+}
+.Member #sidebar a {
+    padding-left: 15px;
 }
 
 #sidebar nav a {
@@ -94,8 +102,13 @@
 
 /*-- basic --*/
 
-#content h3 {
+#content h3,
+#main > h3 {
     margin-bottom: 15px;
+}
+
+#main > h3 {
+    clear: both;
 }
 
 img.shadow {
@@ -108,7 +121,7 @@ img.shadow {
 
 .pager {
     float: left;
-    width: 405px;
+    width: 648px; /*405px;*/
     margin: 10px auto;
     text-align: center;
     *zoom: 1;
@@ -140,13 +153,13 @@ img.shadow {
     background: #eee;
 }
 
-.pager li.current {
+.pager .current {
     color: #00AFC0;
     padding: 2px 6px;
 }
 
-.pager li.prev a,
-.pager li.next a {
+.pager .prev a,
+.pager .next a {
     width: 0px;
     height: 0px;
     padding: 0;
@@ -156,18 +169,18 @@ img.shadow {
     border-color: transparent #FFC73B transparent transparent;
 }
 
-.pager li.next a {
+.pager .next a {
     border-width: 3px 0 3px 6px;
     border-color: transparent transparent transparent #FFC73B;
 }
 
-.pager li.prev a:hover,
-.pager li.next a:hover {
+.pager .prev a:hover,
+.pager .next a:hover {
     border-color: transparent #00AFC0 transparent transparent;
     background: none;
 }
 
-.pager li.next a:hover {
+.pager .next a:hover {
     border-color: transparent transparent transparent #00AFC0;
 }
 
@@ -258,7 +271,7 @@ img.shadow {
 
 .newslist {
     float: left;
-    width: 405px;
+    width: 648px; /*405px;*/
 }
 
 .newslist li {
@@ -268,29 +281,34 @@ img.shadow {
     overflow: hidden;
 }
 
-.newslist li em {
-    float: left;
+.newslist em,
+.newslist a {
+    display: inline-block;
+}
+
+.newslist em {
+    /*float: left;*/
     margin-right: 5px;
     color: #8DC1DF;
     font-size: .8em;
 }
 
-.newslist li a {
-    display: block;
+.newslist a {
+    /*display: block;
     width: 330px;
-    float: right;
+    float: right;*/
     color: #808080;
 }
 
-.newslist li a:hover {
+.newslist a:hover {
     color: #00AFC0;
 }
 
-.News #content h4 em {
+.newstitle em {
     margin-right: 7px;
 }
 
-.News #content .btn {
+.News .btn {
     float: right;
     margin-left: 8px;
 }
@@ -298,9 +316,9 @@ img.shadow {
 
 /* Download */
 
-ul.file {
+.file {
     float: left;
-    width: 405px;
+    width: 648px; /*405px;*/
 }
 
 .file li {
@@ -309,13 +327,13 @@ ul.file {
     background: url('../images/dot4.gif') repeat-x left bottom;
 }
 
-.file li a {
+.file a {
     padding-left: 10px;
     color: #808080;
     background: url('../images/arrow.gif') no-repeat 0 4px;
 }
 
-.file li a:hover {
+.file a:hover {
     color: #00AFC0;
 }
 
@@ -378,7 +396,7 @@ ul.file {
     width: 100%;
 }
 
-.Albums #content .btn {
+.Albums .btn {
     float: right;
     margin: 0 5px 0 6px;
 }

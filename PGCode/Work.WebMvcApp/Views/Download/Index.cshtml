@@ -5,31 +5,29 @@
     Layout = "~/Views/Shared/Layout.cshtml";
 }
 
-<div id="content">
 
-    <h3><span>委託服務</span>SERVICES</h3>
-    <img class="float-r shadow" src="~/Content/images/Download/pic1.jpg">
+<h3><span>委託服務</span>SERVICES</h3>
+<img class="float-r shadow" src="~/Content/images/Download/pic1.jpg">
 
-    <ul class="file">
-        @* 1頁建議7則 *@
-        @* 客戶有更新資料，須取新資料庫 *@
+<ul class="file">
+    @* 1頁建議7則 *@
+    @* 客戶有更新資料，須取新資料庫 *@
 
-        @foreach (var md in Model)
+    @foreach (var md in Model)
+    {
+        var fs = Html.FilesAppendInfo("Sys_Active", "Document", md.id, "DocFiles");
+        if (fs.Length > 0)
         {
-            var fs = Html.FilesAppendInfo("Sys_Active", "Document", md.id, "DocFiles");
-            if (fs.Length > 0)
-            {
-            <li><a href="@Url.Content("~/_Code/SysUpFiles/Sys_Active.Document/" + @md.id + "/DocFiles/OriginFile/" + fs.FirstOrDefault())" >@md.title</a></li>
-            }
+        <li><a href="@Url.Content("~/_Code/SysUpFiles/Sys_Active.Document/" + @md.id + "/DocFiles/OriginFile/" + fs.FirstOrDefault())" >@md.title</a></li>
         }
-    </ul>
+    }
+</ul>
 
-    <ul class="pager">
-        <li class="prev"><a href="#">上一頁</a></li>
-        <li class="current">1</li>
-        <!-- 當前頁 -->
-        <li class="next"><a href="#">下一頁</a></li>
-    </ul>
+<ul class="pager">
+    <li class="prev"><a href="#">上一頁</a></li>
+    <li class="current">1</li>
+    <!-- 當前頁 -->
+    <li class="next"><a href="#">下一頁</a></li>
+</ul>
 
-</div>
-<!-- content //-->
+
