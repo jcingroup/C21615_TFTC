@@ -141,6 +141,7 @@ h3 span {
 
 figure {
     position: relative;
+    overflow: hidden;
     cursor: pointer;
     margin-top: 15px;
     margin-left: 10px;
