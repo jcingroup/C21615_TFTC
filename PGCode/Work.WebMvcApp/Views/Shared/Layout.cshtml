@@ -111,6 +111,8 @@
                 @RenderSection("breadCrumb", false)
                 <li>@ViewBag.Title</li>
             </ul>
+
+            @Html.Partial("sidebar")
         }
             @RenderBody()
 

@@ -102,13 +102,8 @@
 
 /*-- basic --*/
 
-#content h3,
-#main > h3 {
+#content h3 {
     margin-bottom: 15px;
-}
-
-#main > h3 {
-    clear: both;
 }
 
 img.shadow {
@@ -121,7 +116,7 @@ img.shadow {
 
 .pager {
     float: left;
-    width: 648px; /*405px;*/
+    width: 405px; /*648px;*/
     margin: 10px auto;
     text-align: center;
     *zoom: 1;
@@ -271,7 +266,7 @@ img.shadow {
 
 .newslist {
     float: left;
-    width: 648px; /*405px;*/
+    width: 405px; /*648px;*/
 }
 
 .newslist li {
@@ -281,22 +276,22 @@ img.shadow {
     overflow: hidden;
 }
 
-.newslist em,
+/*.newslist em,
 .newslist a {
     display: inline-block;
-}
+}*/
 
 .newslist em {
-    /*float: left;*/
+    float: left;
+    margin-top: -1px;
     margin-right: 5px;
     color: #8DC1DF;
     font-size: .8em;
 }
 
 .newslist a {
-    /*display: block;
-    width: 330px;
-    float: right;*/
+    display: block;
+    overflow: hidden;
     color: #808080;
 }
 
@@ -318,7 +313,7 @@ img.shadow {
 
 .file {
     float: left;
-    width: 648px; /*405px;*/
+    width: 405px; /*648px;*/
 }
 
 .file li {

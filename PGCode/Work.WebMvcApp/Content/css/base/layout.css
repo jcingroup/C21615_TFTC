@@ -51,6 +51,7 @@ body > #container {
 
 #sidebar {
     float: left;
+    overflow: hidden;
     margin-top: 7px;
     width: 215px;
 }

@@ -14,40 +14,42 @@
     <script type="text/javascript" src="~/Scripts/fancybox/source/set.js"></script>
 }
 
-<h3><span>最新消息</span>LATEST NEWS</h3>
-<h4 class="newstitle"><em>@Model.set_date.ToStandardDate()</em>@Model.title</h4>
+<div id="content">
+    <h3><span>最新消息</span>LATEST NEWS</h3>
+    <h4 class="newstitle"><em>@Model.set_date.ToStandardDate()</em>@Model.title</h4>
 
-<div id="upload">
-    <!--文字編輯器-->
-    @Html.Raw(Model.context)
-    @{
-        var pics = Html.ImagesAppendInfo("Sys_Active", "Message", Model.id, "Single");
-    }
-    @if (pics.Length > 0)
-    {
-        <p>
-            @foreach (var p in pics)
-            {
-                <a class="fancybox" href="@p"><img src="@p"></a>
-            }
-        </p>
-    }
-    @{
-        var fs = Html.FilesAppendInfo("Sys_Active", "Message", Model.id, "DocFiles");
-    }
-    <!--檔案上傳-->
-    @if (fs.Length > 0)
-    {
-        <dl class="download">
-            <dt>附件下載</dt>
-            @foreach (var f in fs)
-            {
-                <dd><a href="~/_Code/SysUpFiles/Sys_Active.Message/@Model.id/DocFiles/OriginFile/@f">@f</a></dd>
-            }
-        </dl>
-    }
-</div><!-- upload //-->
+    <div id="upload">
+        <!--文字編輯器-->
+        @Html.Raw(Model.context)
+        @{
+            var pics = Html.ImagesAppendInfo("Sys_Active", "Message", Model.id, "Single");
+        }
+        @if (pics.Length > 0)
+        {
+            <p>
+                @foreach (var p in pics)
+                {
+                    <a class="fancybox" href="@p"><img src="@p"></a>
+                }
+            </p>
+        }
+        @{
+            var fs = Html.FilesAppendInfo("Sys_Active", "Message", Model.id, "DocFiles");
+        }
+        <!--檔案上傳-->
+        @if (fs.Length > 0)
+        {
+            <dl class="download">
+                <dt>附件下載</dt>
+                @foreach (var f in fs)
+                {
+                    <dd><a href="~/_Code/SysUpFiles/Sys_Active.Message/@Model.id/DocFiles/OriginFile/@f">@f</a></dd>
+                }
+            </dl>
+        }
+    </div><!-- upload //-->
 
-<a class="btn" href="#header">TOP</a>
-<a class="btn" href="~/News/list">回列表</a>
+    <a class="btn" href="#header">TOP</a>
+    <a class="btn" href="~/News/list">回列表</a>
+</div>
 
